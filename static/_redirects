@@ -1,0 +1,17 @@
+# Clean URLs exactly like the old site (Hugo writes <page>.html).
+# Rules without "!" only apply when no real file exists at that path.
+/about-us/   /about-us   301
+/brands/     /brands     301
+/contact-us/ /contact-us 301
+/getQuote/   /getQuote   301
+/signin/     /signin     301
+/signup/     /signup     301
+
+# Old per-product quote URLs: one quote page, product pre-filled by JS
+/getQuote/*                   /getQuote.html                     200
+
+/products/category/:cat/:sub  /products/category/:cat/:sub.html  200
+/products/category/:cat       /products/category/:cat.html       200
+/brand/:slug                  /brand/:slug.html                  200
+/product/:slug                /product/:slug.html                200
+/:page                        /:page.html                        200

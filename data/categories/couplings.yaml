@@ -1,0 +1,76 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Couplings
+slug: couplings
+weight: 80
+icon: coupling
+blurb: R+W, Ringfeder, disc, Magnaloy and Samiflex couplings.
+description: A coupling is a device used to connect two shafts together at their ends for the purpose of transmitting power. The primary purpose of.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291046798664.jpeg
+subcategories:
+- name: Coupling Spares
+  slug: coupling-spares
+  description: Spare parts for couplings are essential for maintaining industrial machinery, typically categorized into elastomeric elements.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17732207414444.png
+- name: Ringfeder Couplings
+  slug: ringfeder-couplings
+  heading: Couplings Units
+  description: Ringfeder
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17496348501770.png
+- name: RW Couplings EKL
+  slug: rw-couplings-ekl
+  heading: COUPLINGS Units EKL
+  description: Couplings are used wherever rotation and torque need to be transmitted between two machine components. The requirements.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304817443952.jpeg
+- name: RW Couplings SCL
+  slug: rw-couplings-scl
+  heading: COUPLINGS Units SCL
+  description: R+W Couplings are used wherever rotation and torque need to be transmitted between two machine components. The requirements.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304819038612.png
+- name: Disc Coupling
+  slug: disc-coupling
+  heading: Disc coupling
+  description: A Disc coupling, transmits torque from a driving to a driven bolt tangentially on a common bolt circle. Torque is transmitted.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17149950772914.png
+- name: Double Loop Coupling
+  slug: double-loop-coupling
+  description: The double loop coupling uses a moulded plastic element permanently swaged to steel or stainless steel hubs to give a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301335771602.jpeg
+- name: Samiflex Coupling
+  slug: samiflex-coupling
+  heading: Elastic Couplings
+  description: Samiflex Couplings are used wherever rotation and torque need to be transmitted between two machine components. The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17727934639362.jpeg
+- name: RW Couplings
+  slug: rw-couplings
+  heading: ELASTOMER COUPLINGS
+  description: Couplings are used wherever rotation and torque need to be transmitted between two machine R+W components. The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17827269765928.png
+- name: Rexnord Coupling Element
+  slug: rexnord-coupling-element
+  heading: ELASTOMERIC COUPLING ELEMENT
+  description: REXNORD
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17153340651258.png
+- name: RU Steel Couplings
+  slug: ru-steel-couplings
+  heading: Flexible Couplings
+  description: RU-STEEL
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17573237998106.png
+- name: Magnaloy Coupling
+  slug: magnaloy-coupling
+  heading: Flexible Drive Couplings
+  description: Magnaloy
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17733954885406.png
+- name: Gear Couplings
+  slug: gear-couplings
+  description: Gear Couplings; Couplings. A gear coupling is a mechanical device for transmitting torque between two shafts that are not collinear. It consists of a flexible joint.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301407785593.jpeg
+- name: Jaw Couplings
+  slug: jaw-couplings
+  heading: Jaw couplings
+  description: Jaw Couplings; Couplings. A jaw coupling is a type of general purpose power transmission coupling that also can be used in motion control (servo) applications. It is.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301434455399.jpeg
+- name: Sleeve Couplings
+  slug: sleeve-couplings
+  heading: Sleeve couplings
+  description: A Sleeve coupling is a basic type of coupling. This consists of a pipe whose bore is finished to the required tolerance based on.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304905483729.jpeg

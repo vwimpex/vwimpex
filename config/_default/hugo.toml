@@ -1,0 +1,16 @@
+# Core Hugo settings (developers only). Editable settings live in params.yaml and menus.yaml (CMS: Settings).
+baseURL = "https://vwimpex.com/"
+languageCode = "en-us"
+title = "VW Impex"
+enableRobotsTXT = true
+# Old site URLs have no trailing slash (/about-us). Hugo writes about-us.html; the host serves it at /about-us.
+uglyURLs = true
+disablePathToLower = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[build]
+  [build.buildStats]
+    enable = true

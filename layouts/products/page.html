@@ -1,0 +1,95 @@
+{{ define "main" }}
+{{- $isSub := eq .Params.level "subcategory" }}
+{{- $catURL := printf "/products/category/%s" .Params.catSlug }}
+{{- $items := partial "products-in.html" (dict "cat" .Params.catSlug "sub" (cond $isSub .Params.subSlug "")) }}
+{{- $count := len $items }}
+<section class="page-hero page-hero-cat">
+  <div class="container cat-hero">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ "/" | relURL }}">Home</a> <span>/</span>
+        {{- if $isSub }} <a href="{{ $catURL | relURL }}">{{ .Params.catName }}</a> <span>/</span>{{ end }}
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
+      <p class="eyebrow">{{ if $isSub }}{{ .Params.catName }}{{ else }}Product category{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.summary }}<p class="lead">{{ . }}</p>{{ end }}
+      <div class="cat-meta">
+        {{ if $count }}<span class="badge">{{ lang.FormatNumber 0 $count }} products</span>{{ end }}
+        {{ if not $isSub }}<span class="badge badge-soft">{{ len .Params.subcategories }} sub-categories</span>{{ end }}
+      </div>
+    </div>
+    <div class="cat-visual" aria-hidden="true">
+      {{- with .Params.image }}<img src="{{ partial "img-url.html" . }}" alt="" width="180" height="180" onerror="this.remove()">
+      {{- else }}<span class="icon-badge icon-badge-xl">{{ partial "icon.html" (dict "name" $.Params.icon "size" 56) }}</span>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container cat-layout">
+    <aside class="cat-sidebar">
+      <div class="card">
+        <h2 class="sidebar-title">{{ .Params.catName }}</h2>
+        <ul class="sidebar-links">
+          <li><a href="{{ $catURL | relURL }}"{{ if not $isSub }} class="is-active"{{ end }}>All {{ .Params.catName }}</a></li>
+          {{- range .Params.subcategories }}
+          <li><a href="{{ printf "%s/%s" $catURL .slug | relURL }}"{{ if eq .slug $.Params.subSlug }} class="is-active" aria-current="page"{{ end }}>{{ .name }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+      <div class="card sidebar-cta">
+        <h3>Need a different size?</h3>
+        <p class="muted">Send the part number or dimensions and we'll source it.</p>
+        <a class="btn btn-primary btn-sm" href="{{ "/getQuote" | relURL }}">Request a quote</a>
+      </div>
+    </aside>
+
+    <div class="cat-main">
+      {{- if not $isSub }}
+      <h2 class="block-title">Shop by sub-category</h2>
+      <div class="sub-grid">
+        {{- range .Params.subcategories }}
+        <a class="sub-card" href="{{ printf "%s/%s" $catURL .slug | relURL }}">{{ .name }} {{ partial "icon.html" (dict "name" "arrow" "size" 16) }}</a>
+        {{- end }}
+      </div>
+      {{- with first 10 $items }}
+      <h2 class="block-title">Featured products</h2>
+      <div class="pcard-list">{{ range . }}{{ partial "product-card.html" . }}{{ end }}</div>
+      {{- end }}
+
+      {{- else if $items }}
+      {{- /* Full product list: JSON published once, rendered by assets/js/main.js (search, brand filter, pages) */}}
+      {{- $rows := slice }}
+      {{- range $items }}
+        {{- $specs := partial "product-specs.html" . }}
+        {{- $img := "" }}{{ with .img }}{{ $img = partial "img-url.html" . }}{{ end }}
+        {{- $rows = $rows | append (printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" .slug .brand .part (.desc | default "" | plainify | truncate 90) (partial "product-dims.html" .) (delimit $specs "|") $img (.price | default "")) }}
+      {{- end }}
+      {{- $json := resources.FromString (printf "data/list/%s/%s.json" .Params.catSlug .Params.subSlug) ($rows | jsonify) }}
+      {{- $defImg := "" }}{{ with .Params.image }}{{ $defImg = partial "img-url.html" . }}{{ end }}
+      <div class="product-browser" data-product-browser data-src="{{ $json.RelPermalink }}" data-quote="{{ "/getQuote" | relURL }}" data-img="{{ $defImg }}" data-sub="{{ .Title }}">
+        <div class="list-head"><h2 class="block-title">All {{ .Title }} <span class="muted">(<span data-count>{{ lang.FormatNumber 0 $count }}</span>)</span></h2></div>
+        <div class="browser-tools">
+          <label class="search-field">{{ partial "icon.html" (dict "name" "search" "size" 18) }}<span class="sr-only">Search part number</span><input type="search" placeholder="Search part number, brand or size (e.g. 6205, SKF, 25×52)" data-q></label>
+          <select data-brand aria-label="Filter by brand"><option value="">All brands</option></select>
+        </div>
+        <div class="pcard-list" data-list>
+          {{- /* First 12 rendered in HTML for search engines / no-JS; JS replaces them */}}
+          {{- range first 12 $items }}{{ partial "product-card.html" . }}{{ end }}
+        </div>
+        <nav class="pager" data-pager aria-label="Pages"></nav>
+      </div>
+
+      {{- else }}
+      <div class="card empty-card">
+        <h2>No products listed yet</h2>
+        <p class="muted">We can still source {{ .Title }}. Tell us the part number and quantity.</p>
+        <a class="btn btn-primary" href="{{ "/getQuote" | relURL }}">Get a Quote</a>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{ partial "cta.html" . }}
+{{ end }}

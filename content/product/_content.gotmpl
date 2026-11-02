@@ -1,0 +1,47 @@
+{{- /*
+  One page per product at /product/<slug> (same URL as the old site).
+  Bulk data: data/products/<category>.json (scripts/build_products.py, from the admin export + crawled slugs)
+  Products added or edited in the CMS are real files in this folder (content/product/<slug>.md);
+  a CMS file always wins over the bulk record with the same slug.
+
+  Which bulk products to build is set by the env var HUGO_PRODUCTS (keeps memory low – see build.sh):
+    "all" · "sample" (default: first 50 per category + first 24 per sub-category) · "none" · "ball-bearings@0-35000,gearbox"
+*/ -}}
+{{- $cmsSlugs := dict }}
+{{- range os.ReadDir "content/product" }}{{ if strings.HasSuffix .Name ".md" }}{{ $cmsSlugs = merge $cmsSlugs (dict (strings.TrimSuffix ".md" .Name) true) }}{{ end }}{{ end }}
+{{- $catName := dict }}{{ $subName := dict }}
+{{- range site.Data.categories }}{{ $catName = merge $catName (dict .slug .name) }}{{ $c := .slug }}{{ range .subcategories }}{{ $subName = merge $subName (dict (printf "%s/%s" $c .slug) (.heading | default .name)) }}{{ end }}{{ end }}
+{{- $sel := getenv "HUGO_PRODUCTS" | default "sample" }}
+{{- range $cat, $all := site.Data.products }}
+  {{- $items := slice }}
+  {{- if eq $sel "all" }}{{ $items = $all }}
+  {{- else if eq $sel "sample" }}
+    {{- /* local dev: first 50 of the category (featured lists) + first 24 of every sub-category (first page of each product list) */}}
+    {{- $per := newScratch }}
+    {{- range $i, $p := $all }}
+      {{- $k := $p.sub | default "_none" }}
+      {{- if or (lt $i 50) (lt ($per.Get $k | default 0) 24) }}{{ $items = $items | append $p }}{{ end }}
+      {{- $per.Add $k 1 }}
+    {{- end }}
+  {{- else if ne $sel "none" }}
+    {{- range split $sel "," }}
+      {{- $parts := split . "@" }}
+      {{- if eq (index $parts 0) $cat }}
+        {{- if gt (len $parts) 1 }}
+          {{- $r := split (index $parts 1) "-" }}{{ $from := int (index $r 0) }}{{ $to := int (index $r 1) }}
+          {{- $items = $items | append (first (sub $to $from) (after $from $all)) }}
+        {{- else }}{{ $items = $all }}{{ end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- range $items }}
+    {{- if not (index $cmsSlugs .slug) }}
+    {{- $.AddPage (dict
+        "kind" "page"
+        "path" .slug
+        "title" (printf "%s - %s" .brand .part)
+        "params" (merge . (dict "catName" (index $catName $cat) "subTitle" (index $subName (printf "%s/%s" $cat (.sub | default "")) | default .subName)))
+    ) }}
+    {{- end }}
+  {{- end }}
+{{- end }}

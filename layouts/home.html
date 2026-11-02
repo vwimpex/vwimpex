@@ -1,0 +1,181 @@
+{{ define "main" }}
+{{- $h := .Params.hero | default dict }}{{ $c := .Params.categories | default dict }}{{ $w := .Params.why | default dict }}{{ $b := .Params.brands | default dict }}
+{{- $st := .Params.steps | default dict }}{{ $v := .Params.values | default dict }}{{ $cta := .Params.cta | default dict }}
+{{- $crawl := site.Data.catalog.categories | default dict }}
+{{- $cats := sort site.Data.categories "weight" }}
+
+{{/* 1 ── Hero */}}
+<section class="hero" aria-labelledby="hero-title">
+  {{- with $h.image }}<img class="hero-bg" src="{{ partial "img-url.html" . }}" alt="" width="1920" height="800" fetchpriority="high" decoding="async">{{ end }}
+  <div class="container hero-inner">
+    <p class="eyebrow eyebrow-light">{{ $h.eyebrow }}</p>
+    <h1 id="hero-title">{{ $h.heading }} <span class="hero-accent">{{ $h.headingAccent }}</span></h1>
+    <p class="hero-lead">{{ $h.lead }}</p>
+
+    <form class="hero-search" action="{{ "/search" | relURL }}" method="get" role="search">
+      {{ partial "icon.html" (dict "name" "search" "size" 22) }}
+      <label class="sr-only" for="hero-q">{{ $h.searchLabel | default "Search the catalogue" }}</label>
+      <input id="hero-q" name="q" type="search" placeholder="{{ $h.searchPlaceholder }}" autocomplete="off">
+      <button class="btn btn-accent" type="submit">{{ $h.searchButton | default "Search" }}</button>
+    </form>
+    {{- with $h.suggestions }}
+    <p class="hero-suggest"><span>Try:</span>
+      {{- range . }} <a href="{{ printf "/search?q=%s" (.query | urlquery) | relURL }}">{{ .label }}</a>{{ end }}
+    </p>
+    {{- end }}
+
+    <div class="hero-actions">
+      <a class="btn btn-accent btn-lg" href="{{ "/getQuote" | relURL }}">{{ $h.primaryButton }} {{ partial "icon.html" (dict "name" "arrow" "size" 18) }}</a>
+      <a class="btn btn-glass btn-lg" href="#categories">{{ $h.secondaryButton }}</a>
+    </div>
+
+    <dl class="hero-stats">
+      {{- range site.Data.content.stats }}
+      <div><dd>{{ .value }}</dd><dt>{{ .label }}</dt></div>
+      {{- end }}
+    </dl>
+  </div>
+</section>
+
+{{/* 2 ── Trust strip */}}
+<section class="trust" aria-label="Why customers trust us">
+  <ul class="container trust-list">
+    {{- range site.Data.content.features }}
+    <li>
+      <span class="trust-icon">{{ partial "icon.html" (dict "name" .icon "size" 22) }}</span>
+      <span><strong>{{ .title }}</strong><small>{{ .text }}</small></span>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+
+{{/* 3 ── Shop by category (bento) */}}
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-head section-head-row reveal">
+      <div>
+        <p class="eyebrow">{{ $c.eyebrow }}</p>
+        <h2>{{ $c.heading }}</h2>
+        {{ with $c.text }}<p class="section-sub">{{ . }}</p>{{ end }}
+      </div>
+      <a class="link-arrow" href="{{ "/search" | relURL }}">{{ $c.linkText | default "Search all products" }} {{ partial "icon.html" (dict "name" "arrow" "size" 16) }}</a>
+    </div>
+    <div class="bento">
+      {{- range $i, $cat := $cats }}
+      {{- $count := (index $crawl (printf "/products/category/%s" $cat.slug) | default dict).count }}
+      <a class="tile{{ if lt $i 2 }} tile-lg{{ end }} reveal" style="--d:{{ mul (mod $i 4) 70 }}ms" href="{{ printf "/products/category/%s" $cat.slug | relURL }}">
+        {{- with $cat.image }}<img src="{{ partial "img-url.html" . }}" alt="" loading="lazy" decoding="async" width="600" height="600" onerror="this.remove()">{{ end }}
+        <span class="tile-body">
+          <strong>{{ $cat.name }}</strong>
+          <small>{{ if $count }}{{ lang.FormatNumber 0 $count }} {{ $c.countLabel | default "products" }}{{ else }}{{ len $cat.subcategories }} sub-categories{{ end }}</small>
+        </span>
+        <span class="tile-go">{{ partial "icon.html" (dict "name" "arrow" "size" 18) }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{/* 4 ── Brands marquee (logos come from the brand pages) */}}
+<section class="section section-soft brands-section" aria-labelledby="brands-title">
+  <div class="container">
+    <div class="section-head section-head-row reveal">
+      <div>
+        <p class="eyebrow">{{ $b.eyebrow }}</p>
+        <h2 id="brands-title">{{ $b.heading }}</h2>
+      </div>
+      <a class="link-arrow" href="{{ "/brands" | relURL }}">{{ $b.linkText | default "All brands" }} {{ partial "icon.html" (dict "name" "arrow" "size" 16) }}</a>
+    </div>
+  </div>
+  {{- $brands := slice }}
+  {{- range site.Data.content.featuredBrands }}{{ with site.GetPage (printf "/brand/%s" .) }}{{ $brands = $brands | append . }}{{ end }}{{ end }}
+  <div class="marquee" data-marquee>
+    {{- range $n := seq 2 }}
+    <ul class="marquee-track"{{ if eq $n 2 }} aria-hidden="true"{{ end }}>
+      {{- range $brands }}{{ $bt := .Title }}
+      <li><a class="brand-logo" href="{{ printf "/brand/%s" .Params.slug | relURL }}" title="{{ .Title }}"{{ if eq $n 2 }} tabindex="-1"{{ end }}>
+        {{- with .Params.logo }}<img src="{{ . }}" alt="{{ $bt }}" loading="lazy" decoding="async" height="56" onerror="this.replaceWith(document.createTextNode(this.alt))">{{ else }}{{ .Title }}{{ end -}}
+      </a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+</section>
+
+{{/* 5 ── Why VW Impex (dark section) */}}
+<section class="section section-dark why" aria-labelledby="why-title">
+  <div class="container why-grid">
+    <figure class="why-photo reveal">
+      <img src="{{ $w.image | relURL }}"{{ with $w.imageSmall }} srcset="{{ . | relURL }} 960w, {{ $w.image | relURL }} 1920w" sizes="(max-width: 900px) 100vw, 50vw"{{ end }} alt="{{ $w.imageAlt }}" loading="lazy" decoding="async" width="1920" height="1080">
+    </figure>
+    <div class="why-copy reveal">
+      <p class="eyebrow eyebrow-light">{{ $w.eyebrow }}</p>
+      <h2 id="why-title">{{ $w.heading }}</h2>
+      <p class="why-text">{{ $w.text }}</p>
+      <ul class="why-points">
+        {{- range first 4 site.Data.content.benefits }}
+        <li>
+          <span class="why-icon">{{ partial "icon.html" (dict "name" .icon "size" 22) }}</span>
+          <div><strong>{{ .title }}</strong><p>{{ .text }}</p></div>
+        </li>
+        {{- end }}
+      </ul>
+      <a class="btn btn-accent" href="{{ "/about-us" | relURL }}">{{ $w.buttonText | default "More about us" }}</a>
+    </div>
+  </div>
+</section>
+
+{{/* 6 ── How it works */}}
+<section class="section" aria-labelledby="steps-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ $st.eyebrow }}</p>
+      <h2 id="steps-title">{{ $st.heading }}</h2>
+    </div>
+    <ol class="steps">
+      {{- range $i, $s := $st.items }}
+      <li class="step-card reveal" style="--d:{{ mul $i 100 }}ms">
+        <span class="step-num">{{ add $i 1 }}</span>
+        <h3>{{ $s.title }}</h3>
+        <p>{{ $s.text }}</p>
+      </li>
+      {{- end }}
+    </ol>
+  </div>
+</section>
+
+{{/* 7 ── Values (3 + 2 balanced, centred) */}}
+<section class="section section-soft" aria-labelledby="values-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ $v.eyebrow }}</p>
+      <h2 id="values-title">{{ $v.heading }}</h2>
+      {{ with $v.text }}<p class="section-sub">{{ . }}</p>{{ end }}
+    </div>
+    <div class="values-row">
+      {{- range $i, $it := site.Data.content.values }}
+      <article class="value reveal" style="--d:{{ mul $i 70 }}ms">
+        <span class="value-icon">{{ partial "icon.html" (dict "name" $it.icon "size" 24) }}</span>
+        <h3>{{ $it.title }}</h3>
+        <p>{{ $it.text }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{/* 8 ── Quote CTA banner */}}
+<section class="cta-photo" aria-labelledby="cta-title">
+  {{- with $cta.image }}<img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async" width="1920" height="1080">{{ end }}
+  <div class="container cta-photo-inner reveal">
+    <div>
+      <h2 id="cta-title">{{ $cta.heading }}</h2>
+      <p>{{ $cta.text }}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-accent btn-lg" href="{{ "/getQuote" | relURL }}">{{ $cta.primaryButton }} {{ partial "icon.html" (dict "name" "arrow" "size" 18) }}</a>
+      <a class="btn btn-glass btn-lg" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

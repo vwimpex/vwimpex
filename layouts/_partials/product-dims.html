@@ -1,0 +1,9 @@
+{{- /* Size text like the old site: all filled values of inner × outer × width × length, unit once at the end ("25.4 × 61 × 32 × 114 mm") */ -}}
+{{- $vals := slice -}}{{ $unit := "" -}}
+{{- range slice .di .do .w .l }}{{ with . }}
+  {{- $m := findRESubmatch `^\s*([0-9.,/\- ]*[0-9])\s*([a-zA-Z]*)\s*$` . 1 -}}
+  {{- if $m }}{{ $vals = $vals | append (index (index $m 0) 1) }}{{ if not $unit }}{{ $unit = index (index $m 0) 2 }}{{ end }}{{ else }}{{ $vals = $vals | append . }}{{ end -}}
+{{ end }}{{ end -}}
+{{- $out := "" -}}
+{{- with $vals }}{{ $out = printf "%s %s" (delimit . " × ") (lower ($unit | default "mm")) }}{{ end -}}
+{{- return $out -}}

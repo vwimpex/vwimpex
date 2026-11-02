@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="auth">
+  <div class="auth-card card">
+    <div class="auth-head">
+      {{ partial "logo.html" . }}
+      <h1>Create your account</h1>
+      <p class="muted">Track orders, save quotes and check out faster.</p>
+    </div>
+    {{- /* Same fields as the old /signup form. Static site: posts to the shop backend (signup/saveuserinfo). */}}
+    <form class="form" method="POST" action="{{ site.Params.shopURL }}/signup/saveuserinfo">
+      <div class="form-row">
+        <div class="field"><label for="u-first">First name *</label><input id="u-first" name="first_name" type="text" autocomplete="given-name" required></div>
+        <div class="field"><label for="u-last">Last name *</label><input id="u-last" name="last_name" type="text" autocomplete="family-name" required></div>
+      </div>
+      <div class="field"><label for="u-email">Email *</label><input id="u-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="u-pass">Password *</label><input id="u-pass" name="password" type="password" autocomplete="new-password" minlength="6" required></div>
+      <div class="field"><label for="u-pass2">Confirm password *</label><input id="u-pass2" name="confirm_password" type="password" autocomplete="new-password" minlength="6" required></div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Create account</button>
+    </form>
+    <p class="auth-foot">Already have an account? <a href="{{ "/signin" | relURL }}">Sign in</a></p>
+  </div>
+</section>
+{{ end }}

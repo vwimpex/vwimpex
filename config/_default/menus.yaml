@@ -1,0 +1,45 @@
+# Navigation menus – edited in the CMS (Settings → Menus).
+main:
+- name: Home
+  pageRef: /
+  weight: 10
+- name: Products
+  identifier: products
+  url: '#'
+  weight: 20
+  params:
+    mega: true
+- name: About Us
+  pageRef: /about-us
+  weight: 30
+- name: Brands
+  pageRef: /brands
+  weight: 40
+- name: Contact Us
+  pageRef: /contact-us
+  weight: 50
+footer:
+- name: About Us
+  pageRef: /about-us
+  weight: 10
+- name: Brands
+  pageRef: /brands
+  weight: 20
+- name: Contact Us
+  pageRef: /contact-us
+  weight: 30
+- name: Get a Quote
+  pageRef: /getQuote
+  weight: 40
+- name: Terms and Conditions
+  pageRef: /terms-and-condition
+  weight: 50
+- name: Privacy Policy
+  pageRef: /privacy-policy
+  weight: 60
+- name: Return Policy
+  pageRef: /return-policy
+  weight: 70
+- name: Cookies Policy
+  pageRef: /cookies-policy
+  weight: 80

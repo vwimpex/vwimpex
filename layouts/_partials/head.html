@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $seo := partial "seo.html" . }}{{ $title := $seo.title }}
+<title>{{ $title }}</title>
+{{- if getenv "HUGO_NOINDEX" }}<meta name="robots" content="noindex, nofollow">{{ end }}
+<meta name="description" content="{{ $seo.description }}">
+<link rel="canonical" href="{{ partial "clean-url.html" .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $seo.description }}">
+{{- with $seo.image }}<meta property="og:image" content="{{ . }}">{{ end }}
+<meta property="og:url" content="{{ partial "clean-url.html" .Permalink }}">
+<meta property="og:type" content="{{ cond (eq .Section "product") "product" "website" }}">
+{{- range $seo.jsonld }}<script type="application/ld+json">{{ . | jsonify | safeJS }}</script>{{ end }}
+<meta name="theme-color" content="#0b4f6c">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="icon" href="{{ "apple-touch-icon.png" | relURL }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap">
+{{- /* CSS split like the Bionic site: base + components + pages + responsive, bundled by Hugo Pipes */ -}}
+{{- $files := slice "css/tokens.css" "css/base.css" "css/header.css" "css/components.css" "css/pages.css" "css/footer.css" "css/home.css" "css/responsive.css" }}
+{{- $res := slice }}{{ range $files }}{{ $res = $res | append (resources.Get .) }}{{ end }}
+{{- $css := $res | resources.Concat "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

@@ -1,0 +1,17 @@
+---
+title: JAURE
+slug: jaure
+logo: https://d6qdphvz7to5l.cloudfront.net/brand_images/vwimpex_16721296597795.png
+description: The Jaure brand was formed in 1958 in Zizurkil, Gipuzkoa, Spain, with the production of flexible couplings and transmission elements throughout the European market including.
+entry_type: brand
+---
+
+<p>The Jaure brand was formed in 1958 in Zizurkil, Gipuzkoa, Spain, with the production of flexible couplings and transmission elements throughout the European market including industries such as iron & steel, shipbuilding, wind power, elevators, railroads, paper-milling and petrochemicals.</p>
+<p>The design and production of all Jaure couplings and transmission elements are integrated into their quality system, meeting UNE-EN-ISO 9001 standard and is also certified by DET NORSKE VERITAS (DNV) standards.</p>
+<p>Jaure Couplings has a long history of providing excellent products and solutions for the flexible couplings sector. They provide solutions for the most demanding applications in the world.</p>
+<p>Jaure itself is part of the Regal Beloit Corporation as part of their Power Transmission Solutions division (PTS). Jaure are joined in the PTS division by seven other brands, namely Browning, Kop- Flex, McGill, Morse, Rollway, SealMaster and System Plast. Jaure also works closely with the aforementioned Kop-Flex to integrate their solutions in order to improve each other’s products, with the Jauflex Elastic Coupling being the prime example of the two companies’ excellent synergy when it comes to co-designing a product.</p>
+<p>The mission statement of Jaure Couplings is to provide ‘innovative solutions’ in industry sectors as wide ranging as steel, aluminium, copper, as well as designing and manufacturing specific parts for cranes and hoisting machinery as well as for the paper and mineral industry.</p>
+<p>As well as the Jauflex Elastic Coupling, Jaure produce expertly engineered parts such as TCB Barrel couplings, which should be installed in the drum drive of crane constructions and other mechanical conveying systems. As TCB Barrel Couplings help connect the cable drum with the gearbox output shaft, they are usually recommended for use with the likes of crane lifting mechanisms, winch conveyors and platform hoists.</p>
+<p>Jaure also design and manufacture high quality Crowned Tooth Gear Couplings, but perhaps most impressive is another of the primary products that Jaure produce: the Lamidisc All Steel Coupling. This coupling is specially designed so that it does not need lubrication or regular maintenance. There is also no need to disassemble the Lamidisc All Steel Coupling in order to inspect it, with the piece having the advantage of being able to be checked upon while the machine it is operating with is still running, via the use of a strobe light.</p>
+<p>The Lamidisc All Steel Coupling features a high resistance to harsh environmental conditions and is torsionally rigid so that it doesn’t produce any backlash. While the nature of this product allows it to be monitored for misalignment while it is still in operation, keeping it properly aligned will ensure a potentially infinite life for the coupling.</p>
+<p>All Jaure coupling products can also come with an electronic wear indicator, which allows the machine operator to continuously monitor the wear and tear of the coupling from a remote position such as the operator’s control system or on an optional control display unit.</p>

@@ -1,0 +1,10 @@
+<section class="features">
+  <div class="container features-grid">
+    {{- range site.Data.content.features }}
+    <div class="feature">
+      <span class="icon-badge icon-badge-sm">{{ partial "icon.html" (dict "name" .icon "size" 20) }}</span>
+      <div><strong>{{ .title }}</strong><span>{{ .text }}</span></div>
+    </div>
+    {{- end }}
+  </div>
+</section>

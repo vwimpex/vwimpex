@@ -1,0 +1,44 @@
+# Site settings – edited in the CMS (Settings → Site settings).
+tagline: Marketplace since 2012
+description: VW Impex – online multibrand store for industrial bearings, linear guides and power transmission products, delivered worldwide.
+logo: /images/uploads/logo.webp
+logo2x: /images/uploads/logo@3x.webp
+shopURL: https://vwimpex.com
+imageCDN: https://d6qdphvz7to5l.cloudfront.net
+email: sales@vwimpex.com
+phone: +91-93162-31776
+phoneLandline: 0172-4009254
+hours: Mon – Sat, 10am – 5pm IST
+founded: '2012'
+offices:
+- name: Head Office
+  country: India
+  company: V W IMPEX
+  address:
+  - SCF 503, 2nd Floor, Motor Market
+  - Manimajra, Chandigarh, India 160101
+  phones:
+  - 0172-4009254
+  - +91-93162-31776
+  email: sales@vwimpex.com
+- name: Branch Office
+  country: Dubai, UAE
+  company: VWIMPEX INDUSTRIAL MOTION – FZCO
+  address:
+  - Al Qiyadah exit-2, Al Kazim Building
+  - 2nd floor 214, Office 07, Block A, Dubai 500001
+  phones:
+  - +971-523306459
+  email: sales.uae@vwimpex.com
+social:
+- name: Facebook
+  icon: facebook
+  url: https://www.facebook.com/VWIMPEX/
+- name: Instagram
+  icon: instagram
+  url: https://www.instagram.com/vwimpex/
+- name: X (Twitter)
+  icon: x
+  url: https://twitter.com/vwimpex
+# Currency switch: prices are stored in INR; USD = INR × usdRate (update in the CMS)
+usdRate: 0.0114

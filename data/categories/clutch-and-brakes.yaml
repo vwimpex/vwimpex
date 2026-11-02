@@ -1,0 +1,41 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Clutch and Brakes
+slug: clutch-and-brakes
+weight: 90
+icon: clutch
+blurb: Freewheel, sprag and overrunning clutches, torque releasers.
+description: Clutches and brakes are widely used to transfer rotary motion from one shaft to another. Clutches typically transfer torque via in-line.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291045705393.jpeg
+subcategories:
+- name: Clamping And Braking Elements
+  slug: clamping-and-braking-elements
+  heading: Clamping and Braking Elements
+  description: Clamping And Braking Elements; Clutch And Brakes. Clamping and braking elements routinely perform critical positioning, holding and braking tasks. They ensure precision.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301312159895.jpeg
+- name: Freewheel Clutches
+  slug: freewheel-clutches
+  description: The functional principle of sprag type freewheel clutches is based on static friction. A certain number of sprags.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301399273880.jpeg
+- name: Freewheel Sprag Clutch
+  slug: freewheel-sprag-clutch
+  heading: Freewheel Sprag clutch
+  description: A sprag clutch is a one-way freewheel clutch. It resembles a roller bearing but, instead of cylindrical rollers.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17402110325118.png
+- name: One Way Needle Bearing
+  slug: one-way-needle-bearing
+  description: Clutches and brakes are widely used to transfer rotary motion from one shaft to another. Clutches typically.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17154173278624.png
+- name: Overrunning Clutches
+  slug: overruning-clutches
+  heading: Overruning Clutches
+  description: Clutches and brakes are widely used to transfer rotary motion from one shaft to another. Clutches typically.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17447105405134.png
+- name: Roller Clutches
+  slug: roller-clutches
+  description: Roller Clutches Mainly used as overrunning and indexing clutches., Sprag Clutch . Most suitable as backstops, and mostly.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304854676055.jpeg
+- name: Torque Releaser
+  slug: torque-releaser
+  heading: TORQUE RELEASER
+  description: Clutches and brakes are widely used to transfer rotary motion from one shaft to another. Clutches typically transfer.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17825513816642.png

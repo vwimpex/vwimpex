@@ -1,0 +1,13 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Clamping Element
+slug: clamping-element
+weight: 130
+icon: clamp
+blurb: Clamping elements for shafts and hubs.
+description: ''
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/
+subcategories:
+- name: Clamping Element
+  slug: clamping-element
+  description: A clamping element is a device or component designed to securely hold, position, and fix a workpiece or tool in a precise location. In.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17740010227089.png

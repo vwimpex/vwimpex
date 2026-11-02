@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="auth">
+  <div class="auth-card card">
+    <div class="auth-head">
+      {{ partial "logo.html" . }}
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to track orders, quotes and invoices.</p>
+    </div>
+    {{- /* Static site: login is handled by the existing shop backend. Point action to your auth endpoint. */}}
+    <form class="form" method="POST" action="{{ site.Params.shopURL }}/signin">
+      <div class="field"><label for="s-email">Email *</label><input id="s-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field">
+        <div class="label-row"><label for="s-pass">Password *</label><a href="{{ site.Params.shopURL }}/forgot-password">Forgot password?</a></div>
+        <input id="s-pass" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <label class="checkbox"><input type="checkbox" name="remember"> Keep me signed in</label>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Sign in</button>
+    </form>
+    <p class="auth-foot">Don't have an account? <a href="{{ "/signup" | relURL }}">Create one</a></p>
+  </div>
+  <ul class="auth-perks">
+    {{- range first 3 site.Data.content.features }}
+    <li><span class="icon-badge icon-badge-sm">{{ partial "icon.html" (dict "name" .icon "size" 18) }}</span>{{ .title }}</li>
+    {{- end }}
+  </ul>
+</section>
+{{ end }}

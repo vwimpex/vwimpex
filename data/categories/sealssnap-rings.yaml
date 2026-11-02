@@ -1,0 +1,72 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Seals & Snap Rings
+slug: sealssnap-rings
+weight: 60
+icon: ring
+blurb: Oil seals, Nilos rings, O-rings, snap rings and Speedi-Sleeves.
+description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, Oil Seal , O Ring, NILOS-Rings.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291828951499.jpeg
+subcategories:
+- name: Distance Ring
+  slug: distance-ring
+  heading: A & J Type Sealing Ring
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, Oil Seal , O.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17315742046078.png
+- name: Clark Seals
+  slug: clark-seals
+  heading: Bearing & Seals
+  description: Clark Seals
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17187947085370.png
+- name: Nilos Ring
+  slug: nilos-ring
+  heading: LSTO & LST-L Sealling
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, all-metal.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304791444421.jpeg
+- name: O Rings
+  slug: o-rings
+  heading: O-RINGS
+  description: An O-ring, also known as a packing or a toric joint, is a mechanical gasket in the shape of a torus; it is a loop of elastomer.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304799121006.png
+- name: Oil Seal HDS1
+  slug: oil-seal-hds1
+  heading: OIL SEAL HDS1
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, Oil Seal , O Ring.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17184463913018.png
+- name: Oil Seals
+  slug: oil-seals
+  description: Oil seals are used to protect shafts and bearings from ingress of dirt and foreign matter and egress of oil or grease. An oil.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304800032104.jpeg
+- name: Seal Carrier Assemblies
+  slug: seal-carrier-assemblies
+  heading: Seal carrier assemblies
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, Oil Seal , O.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304857468076.jpeg
+- name: Sealing Rings
+  slug: sealing-rings
+  heading: SEALING RINGS
+  description: Sealing rings were developed as seals for needle roller bearings During this time, they have proved extremely effective in.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304859169154.png
+- name: Nilos Ring JV
+  slug: nilos-ring-jv
+  heading: Sealing-Ring JV
+  description: A Nilos ring that seals the inner roller bearing ring is described as an JV type. They are used to provide sealing for.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304793527333.jpeg
+- name: Nilos Ring AKS
+  slug: nilos-ring-aks
+  heading: Sealing-Ring AKS
+  description: Nilos-Ring
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17442656829141.png
+- name: Nilos Ring AV
+  slug: nilos-ring-av
+  heading: Sealing-Ring AV
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, all-metal.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304792465960.jpeg
+- name: Snap Ring
+  slug: snap-ring
+  description: Designed to keep dirt, dust, debris and other abrasive contaminants out of ball and roller bearings, Oil Seal , O Ring.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16515573445117.jpeg
+- name: Speedi Sleeve
+  slug: speedi-sleeve
+  heading: Speedi-Sleeve
+  description: The new generation SKF Speedi-Sleeve uses a proprietary stainless steel material and manufacturing process, resulting in.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304910242499.jpeg

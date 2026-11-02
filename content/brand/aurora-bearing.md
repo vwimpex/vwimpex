@@ -1,0 +1,14 @@
+---
+title: AURORA
+slug: aurora-bearing
+logo: https://d6qdphvz7to5l.cloudfront.net/brand_images/vwimpex_15964386753489.png
+description: Aurora Bearing Company manufactures rod end and spherical bearings to fill a broad range of motion transfer requirements. Available configurations range from 2-piece economy.
+entry_type: brand
+---
+
+<p>Aurora Bearing Company manufactures rod end and spherical bearings to fill a broad range of motion transfer requirements. Available configurations range from 2-piece economy commercial and molded race construction through 3-piece precision designs. Aurora also produces a full line of military spec rod ends, spherical bearings, and journal bushings. Custom designed rod ends, spherical bearings, and linkages are a specialty. </p>
+<p>Aurora Bearing Products are separated into two classifications: military/aerospace and commercial/industrial.</p>
+<p>Aurora Bearing Company now produces standard and special spherical bearings, rod ends and bushings for aircraft manufacturers, their subcontractors, and approved aerospace distributors. Bearings and rod ends for use in the general aviation, experimental, ultra light aircraft industries, and in non-critical applications by commercial aircraft manufacturers, although not requiring military approval, are manufactured to the same quality and SPC systems as the military approved products. Dimensions and configurations follow established industry conventions.</p>
+<p>Aurora Bearing Company's Mil Spec Series consists of rod end bearings approved for procurement to SAE-AS81935, Spherical Bearings approved to SAE-AS14101 through SAE-AS14104, and bushings approved to SAE-AS81934. All feature Aurora’s exclusive AT 3200 PTFE liner, fully approved to SAE-AS81820.</p>
+<p>Aurora Bearing Rod ends the aurora rod end bearing product line features over twenty-five different standard series of rod ends in inch, or imperial, and metric dimensions. All feature one-piece, full swage steel raceway construction, with the exception of the SPM/SPW series, which feature a proprietary low friction high wear resistance molded liner. Aurora PTFE liners are available in most series.</p>
+<p>There are sixteen series of Aurora spherical bearings all with single-piece race type construction, which provides excellent ball-to-race conformity and structural integrity, along with the advantages of metal-to-metal contact between bearing components. Standard race materials are low carbon, heat treated alloy or stainless steel. Balls are precision ground alloy or stainless steel. Metal on metal race units can be re-lubricated through an annular groove in the outer race with two interconnecting holes positioned at 180 degrees, while a self lubricating PTFE to metal interface may also be optionally specified in many series. Inch or imperial sizes range from 3/16 inch through 6 inch bore, metrics from 3 through 160 mm.</p>

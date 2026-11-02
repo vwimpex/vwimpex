@@ -1,0 +1,22 @@
+{{- /* Product card like the old site (image, title, type, spec chips, availability, Get A Quote) */ -}}
+{{- $url := printf "/product/%s" .slug | relURL }}
+{{- $dims := partial "product-dims.html" . }}
+{{- $img := partial "product-img.html" . }}
+{{- $cat := index site.Data.categories .cat | default dict }}{{ $sub := .subName }}{{ $s := .sub }}{{ range $cat.subcategories }}{{ if eq .slug $s }}{{ $sub = .heading | default .name }}{{ end }}{{ end }}
+<article class="pcard">
+  <a class="pcard-media" href="{{ $url }}">
+    {{- with $img }}<img src="{{ . }}" alt="{{ $.brand }} {{ $.part }}" loading="lazy" width="240" height="240" onerror="this.remove()">{{ else }}{{ partial "icon.html" (dict "name" "ball" "size" 64) }}{{ end }}
+  </a>
+  <div class="pcard-body">
+    <h3><a href="{{ $url }}">{{ .brand }} - {{ .part }}{{ with $sub }} | {{ . }}{{ end }}{{ with $dims }} | {{ . }}{{ end }}</a></h3>
+    {{ with .desc }}<p class="pcard-type">{{ . | plainify | truncate 90 }}</p>{{ end }}
+    {{- with partial "product-specs.html" . }}<ul class="spec-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    {{- with .price }}<p class="price" data-inr="{{ . }}">₹{{ lang.FormatNumber 0 (float .) }}</p>{{ end }}
+    <ul class="pcard-points">
+      <li>{{ partial "icon.html" (dict "name" "check" "size" 15) }} Availability: <strong>Sourced to Order</strong></li>
+      <li>{{ partial "icon.html" (dict "name" "truck" "size" 15) }} <strong>Standard Dispatch:</strong> 7–9 Business Days</li>
+      <li>{{ partial "icon.html" (dict "name" "tag" "size" 15) }} <strong>Get a Quote</strong> for Exact Pricing &amp; Lead Time</li>
+    </ul>
+    <a class="btn btn-primary" href="{{ printf "/getQuote/%s" .slug | relURL }}">Get A Quote</a>
+  </div>
+</article>

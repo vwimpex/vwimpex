@@ -1,0 +1,311 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Special Bearings
+slug: special-bearings
+weight: 30
+icon: star
+blurb: Cam followers, rod ends, slewing rings, track rollers and locking devices.
+description: ''
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291830253438.jpeg
+subcategories:
+- name: Nadella Accessories
+  slug: nadella-accessories
+  heading: Accessories untis
+  description: ADJUSTMENT PLATES FOR PR CARRIAGES, WIPERS RPT SERIES, SPACERS FOR FS AND FSH, PINION PZ.., LUBRICATION WHEEL LUBZ.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17690609926776.png
+- name: Adjustable Radial Plain Bearing
+  slug: adjustable-radial-plain-bearing
+  description: Spieth radial plain bearings – hydrodynamic multilobe bearings with adjustable play. Spindle bearings.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17371972424925.png
+- name: Aerospace Bearing
+  slug: aerospace-bearing
+  heading: Aerospace Bearings
+  description: Aerospace bearings are specially designed bearings which are installed in aerospace and aircraft systems; which.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291833445606.jpeg
+- name: Back Up Rollers
+  slug: back-up-rollers
+  heading: Back-Up Rollers
+  description: Back-Up Rollers are mainly used to improve the hard running conditions of straightening and sheet flattening machines.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17152432221191.png
+- name: Bushing
+  slug: bushing
+  heading: Bushings and Plain Bearings
+  description: Bushings (also referred to as plain bearings, plane bearings, sleeve bearings or linear sleeve bushings).
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295323713015.jpeg
+- name: Cage Assemblies Axial Bearing Washers
+  slug: cage-assemblies-axial-bearing-washers
+  heading: Cage Assemblies & Axial Bearing Washers
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17368489648690.png
+- name: Cage Strips Filled With Ball Ball Cages
+  slug: cage-strips-filled-with-ball-ball-cages
+  heading: Cage Strips Filled with Ball (Ball Cages)
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17368343076446.png
+- name: Cam Follower
+  slug: cam-follower
+  heading: Cam Followers
+  description: JNS Cam followers (stud-type track rollers) are designed to run on all types of tracks and to be used in cam drives.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301307178061.jpeg
+- name: Carter Cam Followers
+  slug: carter-cam-followers
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370277421455.png
+- name: Clamping Nuts Series AMS
+  slug: clamping-nuts-series-ams
+  heading: Clamping Nuts Series
+  description: AMS Spieth clamping nuts are in demand as mechanical force-transmitting elements due to their effective operating.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17373734385107.png
+- name: Clamping Sets DSM
+  slug: clamping-sets-dsm
+  heading: Clamping Sleeves Sets
+  description: Spieth Clamping Sleeves eliminate the need for expensive machining operations such as shaft and hub key ways.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17371965362944.png
+- name: Combined Bearing
+  slug: combined-bearing
+  description: Combined bearings are roller bearings able to support radial and axial loads acting contemporary, but through two.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301313909759.jpeg
+- name: Crossed Roller Slim Split Bearing
+  slug: crossed-roller-slim-split-bearing
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17368546255387.png
+- name: Cylindrical Roller Thrust Collar
+  slug: cylindrical-roller-thrust-collar
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16700625921134.jpeg
+- name: Deflection / Guide Pulley
+  slug: deflectionguide-pulley
+  heading: Guide Pulley
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17859934344206.png
+- name: Disk Harrow Units
+  slug: disk-harrow-units
+  heading: Field Pro Disk Harrow Units
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17859927987227.png
+- name: Flange Plates
+  slug: flange-plates
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17545483674459.png
+- name: Flatlock Locknuts SFL
+  slug: flatlock-locknuts-sfl
+  heading: Flatlock Locknuts
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17371977229713.png
+- name: Glycodur Bushings
+  slug: glycodur-bushings
+  heading: Glyco Bushings Units
+  description: Glycodur bushings are high-performance, lead-free dry sliding bearings designed to minimize maintenance and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17501455714802.png
+- name: Guide Bushings
+  slug: guide-bushings
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17373733896977.png
+- name: Guide Gibs Series FLW
+  slug: guide-gibs-series-flw
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17373733302902.png
+- name: Hydraulic Rod Ends
+  slug: hydraulic-rod-ends
+  heading: Hydraulic rod ends
+  description: Rod Ends with short thread, particular suited for hydraulic cylinders. Spherical Plain Bearings, regreasable, fixed.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301417502493.jpeg
+- name: Hydraulic Rod Ends GF DO
+  slug: hydraulic-rod-ends-gf-do
+  heading: Hydraulic rod ends GF DO
+  description: Hydraulic rod ends GF-DO, with welding face, requiring maintenance, Radial load Axial load in one direction.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301419776784.jpeg
+- name: Inner Ring
+  slug: inner-ring
+  description: Inner ring can be used independently or as an inner race for a properly sized needle roller bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301420773328.jpeg
+- name: Journal Bearing
+  slug: journal-bearing
+  heading: JOURNAL BEARING
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323581904982.png
+- name: Lazy Susan
+  slug: lazy-susan
+  heading: LAZY SUSAN
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/
+- name: Osborn Load Runners
+  slug: osborn-load-runners
+  heading: LOAD RUNNERS
+  description: OSBORN LOAD RUNNERS
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16793891674909.jpeg
+- name: Lock Nut
+  slug: lock-nut
+  description: Bearing lock nuts, sometimes called shaft locknuts or bearing retaining nuts, are utilized to secure bearings onto a shaft and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304762907658.jpeg
+- name: Locking Assembly
+  slug: locking-assembly
+  heading: Locking assembly
+  description: Locking Assembly installs between the shaft and the clamped component. As you tighten the screws, outer and inner.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17415990107231.png
+- name: Locking Bush
+  slug: locking-bush
+  heading: LOCKING BUSH
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17338316737880.png
+- name: SIT Locking Devices Couplings
+  slug: sit-locking-devices-couplings
+  heading: Locking Devices & Couplings
+  description: SIT
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17403890162873.png
+- name: Whittet Higgins Locking Devices
+  slug: whittet-higgins-locking-devices
+  heading: Locking Devices Units
+  description: Whittet-Higgins
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17416008352913.png
+- name: Locking Elements
+  slug: locking-elements
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17496282705279.png
+- name: Locknuts
+  slug: locknuts
+  heading: LOCKNUTS
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17195732242124.png
+- name: Needle Roller Flat Cage
+  slug: needle-roller-flat-cage
+  heading: Needle roller flat cage
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323590033293.png
+- name: Nord Lock Washers
+  slug: nord-lock-washers
+  heading: NORD LOCK WASHERS
+  description: NORD LOCK WASHERS
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16716213696465.jpeg
+- name: Precision Lock Nut Spieth MSA
+  slug: precision-lock-nut-spieth-msa
+  heading: Precision Lock Nut MSA
+  description: Spieth locknuts are precision nuts with a high-quality locking system (premium thread-locking). Spieth locknuts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304809994865.jpeg
+- name: Precision Lock Nut Spieth MSF
+  slug: precision-lock-nut-spieth-msf
+  heading: Precision Lock Nut MSF
+  description: Spieth locknuts are precision nuts with a high-quality locking system (premium thread-locking). Spieth locknuts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304811317790.jpeg
+- name: Precision Lock Nut Spieth MSR
+  slug: precision-lock-nut-spieth-msr
+  heading: Precision Lock Nut MSR
+  description: Spieth locknuts are precision nuts with a high-quality locking system (premium thread-locking). Spieth locknuts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304812559568.jpeg
+- name: Precision Lock Nut Spieth
+  slug: precision-lock-nut-spieth
+  heading: Precision Lock Nut MSW
+  description: Spieth locknuts are precision nuts with a high-quality locking system (premium thread-locking). Spieth locknuts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304814046449.jpeg
+- name: Precision Locknut
+  slug: precision-locknut
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16569242168472.jpeg
+- name: Radial Needle Roller Cage Assemblies
+  slug: radial-needle-roller-cage-assemblies
+  heading: Radial Needle Roller & Cage Assemblies
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17383053798525.png
+- name: Rod End Bearings SKF
+  slug: rod-end-bearings-skf
+  heading: Rod End Bearing Units
+  description: SKF Rod ends consist of an eye-shaped head with integral shank that forms a housing for a spherical plain bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304829454528.jpeg
+- name: Rod End Bearings
+  slug: rod-end-bearings
+  description: Rod ends consist of an eye-shaped head with integral shank that forms a housing for a spherical plain bearing. As a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17442682907545.png
+- name: Durbal Rod Ends
+  slug: durbal-rod-ends
+  heading: Rod Ends Units
+  description: DURBAL produces and develops antifriction bearing and plain bearing rod ends and spherical plain bearings of outstanding.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17367570358798.png
+- name: Smith Roller
+  slug: smith-roller
+  heading: ROLLER Bearings
+  description: SMITH
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16526972928895.jpeg
+- name: Rollon Track Rollers
+  slug: rollon-track-rollers
+  heading: ROLLON TRACK ROLLERS
+  description: Track rollers—also referred to as idler rollers—are motion transmission components designed to work with all.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17163660746999.png
+- name: Roundway Linear Roller Bearings
+  slug: roundway-linear-roller-bearings
+  heading: RoundWay Linear Roller Bearings
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304855868503.jpeg
+- name: Self Aligning Rotary Motion Bearing
+  slug: self-aligning-rotary-motion-bearing
+  description: Self Aligning Linear and Rotary Motion Bearing For Cut-Off/Creping/Cleaning Doctors Machines are Used.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16501036885535.png
+- name: Sensor Bearing
+  slug: sensor-bearing
+  description: Sensor bearing units are used to monitor accurately the status of rotating or linear components and are compact, robust.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304863998785.jpeg
+- name: Ruland Shaft Collars Couplings
+  slug: ruland-shaft-collars-couplings
+  heading: Shaft Collars & Couplings
+  description: Ruland
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17404831634923.png
+- name: Shaft Support Block
+  slug: shaft-support-block
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17550840528944.png
+- name: Shrink Discs
+  slug: shrink-discs
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17496271806166.png
+- name: Slew Bearings
+  slug: slew-bearings
+  description: Slewing ring bearings, or turntable bearings, are ball or roller style bearings composed of two concentric rings either.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17302717248895.png
+- name: Spherical Plain Bearing
+  slug: spherical-plain-bearing
+  description: Traditional Plain Bearing users who handle radial loads and suffer the constant tension of major and minor.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304912648376.jpeg
+- name: Stainless Steel SS PHS POS EC
+  slug: stainless-steel-ss-phs-pos-ec
+  heading: STAINLESS STEEL SS-PHS -POS EC
+  description: These are Stainless steel body and ball. Highly wear-resisting PTFE liner. &Corrosion resistance.rnBODY.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304926219009.jpeg
+- name: McGill Roller Bearing
+  slug: mcgill-roller-bearing
+  heading: STUD-TYPE ROLLER BEARING
+  description: Mc-Gill Cam followers (stud-type track rollers) are designed to run on all types of tracks and to be used in.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304775266445.png
+- name: Support Roller
+  slug: support-roller
+  description: Support rollers (yoke-type track rollers) are designed to run on all types of tracks and to be used in cam drives.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304927184817.jpeg
+- name: Support Roller RNA
+  slug: support-roller-rna
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304930125917.jpeg
+- name: Tandem Bearing INA
+  slug: tandem-bearing-ina
+  heading: Tandem Bearing units
+  description: INA Tandem bearings consist of several axial cylindrical roller bearings arranged in line, A system of rings and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304931746615.jpeg
+- name: Tandem Bearing Neutral
+  slug: tandem-bearing-neutral
+  heading: Tandem Roller Bearing
+  description: Tandem bearings consist of several axial cylindrical roller bearings arranged in line, A system of rings and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304932985171.png
+- name: Tensioner Pulley
+  slug: tensionerpulley
+  heading: TensionerPulley
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17859920469523.png
+- name: Thrust Spherical Plain Bearings
+  slug: thrust-spherical-plain-bearings
+  heading: Thrust spherical plain bearings
+  description: Thrust spherical plain bearings have a convex spherical surface on the shaft washer and a corresponding.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304944448331.jpeg
+- name: Thrust Washer
+  slug: thrust-washer
+  heading: Thrust washer
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304946532027.jpeg
+- name: Track Roller Bearing Nadella
+  slug: track-roller-bearing-nadella
+  heading: Track roller bearing units
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17600092968920.png
+- name: Track Roller Bearings
+  slug: track-roller-bearings
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17600096026781.png
+- name: Track Rollers
+  slug: track-rollers
+  description: Track rollers—also referred to as idler rollers—are motion transmission components designed to work with all varieties.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304950341528.jpeg
+- name: Track Rollers V Shape Hepco
+  slug: track-rollers-v-shape-hepco
+  description: V-Groove Track Rollers followers these track rollers offer more mounting flexibility than threaded.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17162910529960.png
+- name: Turntable Bearing
+  slug: turntable-bearing
+  description: Turntable bearings (sometimes referred to as slewing ring bearings) are 4 point contact thin section type ball.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304958879894.jpeg
+- name: Turntable Bearing Agriculture
+  slug: turntable-bearing-agriculture
+  heading: Turntable bearings Agriculture
+  description: The turntable basically consists of 2 flange rings which have a semi-circular shaped rolling track. The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16425043217497.png
+- name: V Guide Bushing
+  slug: v-guide-bushing
+  heading: V-Guide Bushing
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304960732002.jpeg

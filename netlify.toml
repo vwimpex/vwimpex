@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------------------
+# NETLIFY = TEST / PREVIEW ONLY
+# Netlify allows ~54,000 files per folder, so this build includes ~51k of the
+# ~239k product pages (/product/ folder). Production (all products) needs S3 +
+# CloudFront or an own server – run ./build.sh there.
+# The test site is noindex so Google never sees it.
+# ---------------------------------------------------------------------------
+[build]
+  command = "hugo --gc --minify -b \"${DEPLOY_PRIME_URL:-$URL}/\""
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.152.2"
+  HUGO_NOINDEX = "true"
+  # 12 smaller categories complete (~46.8k) + first 1,000 of the 4 big ones
+  HUGO_PRODUCTS = "linear-bearings,sealssnap-rings,thrust-bearings,couplings,clutch-and-brakes,parts-for-bearings,tools-for-bearings,power-transmission,clamping-element,gearbox,bearing-accessories,roller-and-inline-skates-accessories,ball-bearings@0-1000,roller-bearings@0-1000,special-bearings@0-1000,housings@0-1000"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

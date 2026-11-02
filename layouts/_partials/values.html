@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our values</p>
+      <h2>Built on reputation</h2>
+      <p>Your satisfaction is our highest priority. These five values guide every order we ship.</p>
+    </div>
+    <div class="values-grid">
+      {{- range site.Data.content.values }}
+      <article class="card value-card">
+        <span class="icon-badge">{{ partial "icon.html" (dict "name" .icon "size" 22) }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>

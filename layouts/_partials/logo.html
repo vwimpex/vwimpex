@@ -1,0 +1,8 @@
+<a class="logo" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} home">
+  {{- with site.Params.logo }}
+  <img src="{{ . | relURL }}"{{ with site.Params.logo2x }} srcset="{{ site.Params.logo | relURL }} 1x, {{ . | relURL }} 3x"{{ end }} alt="{{ site.Title }}" width="160" height="201">
+  {{- else }}
+  <svg class="logo-mark" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/><path d="M10 16l6 18 6-14 4 10 4-10 6 14 2-18" fill="none" stroke="var(--accent)" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  <span class="logo-text"><strong>VW</strong> impex</span>
+  {{- end }}
+</a>

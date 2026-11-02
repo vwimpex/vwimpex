@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="section auth">
+  <div class="container text-center">
+    <p class="eyebrow">Error 404</p>
+    <h1>This page has rolled away</h1>
+    <p class="lead">The page you're looking for doesn't exist or has moved.</p>
+    {{- if hugo.IsServer }}
+    <div class="card dev-note">
+      <strong>Local development note</strong>
+      <p class="muted">The local server builds only {{ with getenv "HUGO_PRODUCTS" }}<code>HUGO_PRODUCTS={{ . }}</code>{{ else }}the first 50 products per category{{ end }}.
+      Stop it (Ctrl+C) and run this in the project folder:</p>
+      <p><code data-dev-cmd>./dev.sh</code> <button type="button" class="btn btn-ghost btn-sm" data-copy>Copy</button></p>
+      <p class="muted small">All products at once: <code>./build.sh &amp;&amp; npx serve@14 public</code></p>
+    </div>
+    <script>
+      (function () {
+        var m = location.pathname.match(/^\/product\/([^\/]+)/), el = document.querySelector('[data-dev-cmd]');
+        if (m) el.textContent = './dev.sh ' + m[1];
+        document.querySelector('[data-copy]').onclick = function () { navigator.clipboard && navigator.clipboard.writeText(el.textContent); this.textContent = 'Copied'; };
+      })();
+    </script>
+    {{- end }}
+    <div class="hero-actions hero-actions-center">
+      <a class="btn btn-primary" href="{{ "/" | relURL }}">Back to home</a>
+      <a class="btn btn-ghost" href="{{ "/contact-us" | relURL }}">Contact us</a>
+    </div>
+  </div>
+</section>
+{{ end }}

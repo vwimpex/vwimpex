@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section section-tight">
+  <div class="container contact-layout contact-layout-reverse">
+    <div class="card form-card">
+      <form name="quote" method="POST" action="{{ "/thank-you" | relURL }}" data-netlify="true" netlify-honeypot="company_website" class="form">
+        <input type="hidden" name="form-name" value="quote">
+        <p class="hidden-field"><label>Leave empty <input name="company_website"></label></p>
+
+        <fieldset>
+          <legend><span class="step">1</span> Product details</legend>
+          <div class="form-row">
+            <div class="field field-wide"><label for="q-product">Product name / part number *</label><input id="q-product" name="product_name" type="text" placeholder="e.g. SKF 6205-2RS" required></div>
+            <div class="field field-narrow"><label for="q-qty">Quantity *</label><input id="q-qty" name="quantity" type="number" min="1" required></div>
+          </div>
+          <div class="field"><label for="q-message">Message *</label><textarea id="q-message" name="message" rows="4" placeholder="Brand preference, dimensions, delivery deadline…" required></textarea></div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="step">2</span> Your details</legend>
+          <div class="form-row">
+            <div class="field"><label for="q-first">First name *</label><input id="q-first" name="first_name" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label for="q-last">Last name *</label><input id="q-last" name="last_name" type="text" autocomplete="family-name" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="q-email">Email *</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="q-phone">Phone *</label><input id="q-phone" name="phone_number" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="q-company">Company name</label><input id="q-company" name="company_name" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="q-reg">Company registration number</label><input id="q-reg" name="company_registration_number" type="text"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="step">3</span> Delivery address</legend>
+          <div class="field"><label for="q-address">Full address *</label><input id="q-address" name="address" type="text" autocomplete="street-address" required></div>
+          <div class="form-row form-row-3">
+            <div class="field"><label for="q-city">City *</label><input id="q-city" name="city" type="text" autocomplete="address-level2" required></div>
+            <div class="field"><label for="q-postal">Postal code *</label><input id="q-postal" name="postal_code" type="text" autocomplete="postal-code" required></div>
+            <div class="field"><label for="q-country">Country *</label>{{ partial "country-select.html" (dict "id" "q-country") }}</div>
+          </div>
+        </fieldset>
+
+        <button class="btn btn-primary btn-lg" type="submit">Send quote request {{ partial "icon.html" (dict "name" "arrow" "size" 18) }}</button>
+      </form>
+    </div>
+
+    <aside class="contact-side">
+      <div class="card">
+        <h3>How it works</h3>
+        <ol class="steps-list">
+          <li><strong>Send your request</strong><span>Part number, brand and quantity.</span></li>
+          <li><strong>We source it</strong><span>From 277+ brands and our worldwide network.</span></li>
+          <li><strong>Get price & ETA</strong><span>Usually within one business day.</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Prefer email?</h3>
+        <p class="muted">Send your list or a photo of the old part.</p>
+        <ul class="contact-list">
+          <li>{{ partial "icon.html" (dict "name" "mail" "size" 18) }}<a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
+          <li>{{ partial "icon.html" (dict "name" "phone" "size" 18) }}<a href="tel:{{ site.Params.phone }}">{{ site.Params.phone }}</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+{{ end }}

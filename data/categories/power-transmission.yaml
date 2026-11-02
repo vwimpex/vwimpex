@@ -1,0 +1,34 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Power Transmission
+slug: power-transmission
+weight: 120
+icon: gear
+blurb: Sprockets, chains, belts, gears and pulleys.
+description: Power transmission products are used in mechanical drive-trains to create movement. Components include gearboxes, timing belts,pulleys.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291067837216.jpeg
+subcategories:
+- name: Belts
+  slug: belts
+  description: Belts; Power Transmission. A belt is a loop of flexible material used to link two or more rotating shafts mechanically, most often parallel. Belts may be used as a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295321732084.jpeg
+- name: Chains
+  slug: chains
+  description: Chains; Power Transmission. Drive chain is a machine element that transmits the power of a motor or the like as tension to driven machinery via sprockets. Features.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301310992915.jpeg
+- name: Gears
+  slug: gears
+  description: Gears; Power Transmission. A gear is a rotating machine part having cut teeth or, in the case of a cogwheel, inserted teeth (called cogs), which mesh with another.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301408728930.jpeg
+- name: Pulley
+  slug: pulley
+  description: Pulley; Power Transmission. V-Belt Pulleys ensures more mileage form V-belt drive in a way, pulley is made from superior quality graded cast iron, with grooves property.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304815751864.jpeg
+- name: Roller Chain Idler Sprocket
+  slug: roller-chain-idler-sprocket
+  heading: Roller chain idler sprocket
+  description: Power transmission products are used in mechanical drive-trains to create movement. Components include.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304831903546.jpeg
+- name: Sprockets
+  slug: sprockets
+  description: Sprockets; Power Transmission. A sprocket or sprocket-wheel is a profiled wheel with teeth, or cogs, that mesh with a chain, track or other perforated or indented.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304924063595.jpeg

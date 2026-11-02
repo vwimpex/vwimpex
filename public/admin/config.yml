@@ -1,0 +1,1126 @@
+# Decap CMS configuration (same CMS as the Bionic site). Login: Netlify Identity + Git Gateway (see README).
+# Local testing: run `npx decap-server` + `hugo server`, then open http://localhost:1313/admin/
+backend:
+  name: git-gateway
+  branch: main
+local_backend: true
+editor:
+  preview: false
+site_url: https://vwimpex.com
+display_url: https://vwimpex.com
+logo_url: /images/uploads/logo.webp
+media_folder: static/images/uploads
+public_folder: /images/uploads
+publish_mode: simple
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
+collections:
+- name: pages
+  label: Pages
+  files:
+  - name: home
+    label: Home page
+    file: content/_index.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: "Hero (top banner)"
+      name: hero
+      widget: object
+      fields:
+      - label: Background photo
+        name: image
+        widget: image
+        required: false
+        hint: "Wide photo (1920×800 or larger). Default is the bearing photo on CloudFront."
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading (line 1, white)
+        name: heading
+        widget: string
+      - label: Heading (line 2, light blue)
+        name: headingAccent
+        widget: string
+      - label: Intro text
+        name: lead
+        widget: text
+      - label: Search box label (screen readers)
+        name: searchLabel
+        widget: string
+      - label: Search box placeholder
+        name: searchPlaceholder
+        widget: string
+      - label: Search button text
+        name: searchButton
+        widget: string
+      - label: Search suggestions (small chips under the search box)
+        name: suggestions
+        widget: list
+        fields:
+          - {label: Text on chip, name: label, widget: string}
+          - {label: Search for, name: query, widget: string}
+      - label: Main button text (Get a Quote)
+        name: primaryButton
+        widget: string
+      - label: Second button text (scrolls to categories)
+        name: secondaryButton
+        widget: string
+    - label: Categories section
+      name: categories
+      widget: object
+      fields:
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Intro text
+        name: text
+        widget: text
+      - label: Link text (top right)
+        name: linkText
+        widget: string
+      - label: Word after the product count
+        name: countLabel
+        widget: string
+    - label: Brands section (logos come from Featured brands in Shared sections)
+      name: brands
+      widget: object
+      fields:
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Link text
+        name: linkText
+        widget: string
+    - label: Why VW Impex section (dark)
+      name: why
+      widget: object
+      fields:
+      - label: Photo (large)
+        name: image
+        widget: image
+      - label: Photo (small, for phones)
+        name: imageSmall
+        widget: image
+        required: false
+      - label: Photo description
+        name: imageAlt
+        widget: string
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button text
+        name: buttonText
+        widget: string
+      - label: Bullet points (the 4 benefit boxes come from Shared sections → Benefits)
+        name: points
+        widget: list
+    - label: How it works section
+      name: steps
+      widget: object
+      fields:
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Steps (3 recommended)
+        name: items
+        widget: list
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Text, name: text, widget: text}
+    - label: Values section (the 5 values come from Shared sections → Our values)
+      name: values
+      widget: object
+      fields:
+      - label: Small label
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: Quote banner (bottom)
+      name: cta
+      widget: object
+      fields:
+      - label: Background photo
+        name: image
+        widget: image
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button text
+        name: primaryButton
+        widget: string
+  - name: about
+    label: About Us
+    file: content/about-us.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: about
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: brands
+    label: Brands list page (intro)
+    file: content/brands.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: brands
+  - name: contact
+    label: Contact Us
+    file: content/contact-us.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: contact
+  - name: quote
+    label: Get a Quote
+    file: content/getQuote.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: quote
+  - name: signin
+    label: Sign In
+    file: content/signin.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: signin
+  - name: signup
+    label: Sign Up
+    file: content/signup.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: signup
+  - name: thanks
+    label: Thank you (after form)
+    file: content/thank-you.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: terms
+    label: Terms and Conditions
+    file: content/terms-and-condition.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: legal
+    - label: Order
+      name: weight
+      widget: hidden
+      default: 10
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: privacy
+    label: Privacy Policy
+    file: content/privacy-policy.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: legal
+    - label: Order
+      name: weight
+      widget: hidden
+      default: 20
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: returns
+    label: Return Policy
+    file: content/return-policy.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: legal
+    - label: Order
+      name: weight
+      widget: hidden
+      default: 30
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: cookies
+    label: Cookies Policy
+    file: content/cookies-policy.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: legal
+    - label: Order
+      name: weight
+      widget: hidden
+      default: 40
+    - label: Page text
+      name: body
+      widget: markdown
+      required: false
+  - name: search
+    label: Search page
+    file: content/search.md
+    fields:
+    - label: Page title (browser tab & Google)
+      name: title
+      widget: string
+    - label: Meta description (Google snippet)
+      name: description
+      widget: text
+      required: false
+    - label: Small label above heading
+      name: eyebrow
+      widget: string
+      required: false
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro text
+      name: lead
+      widget: text
+      required: false
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: search
+- name: blocks
+  label: Shared sections
+  files:
+  - name: content
+    label: Features, stats, values, benefits, specialities
+    file: data/content.yaml
+    fields:
+    - label: Trust strip (under home banner)
+      name: features
+      widget: list
+      fields:
+      - label: Icon
+        name: icon
+        widget: select
+        options:
+        - arrow
+        - award
+        - ball
+        - box
+        - cart
+        - check
+        - chevron
+        - clamp
+        - clock
+        - close
+        - clutch
+        - coupling
+        - facebook
+        - gear
+        - globe
+        - grid
+        - handshake
+        - headset
+        - linear
+        - linkedin
+        - lock
+        - mail
+        - menu
+        - parts
+        - phone
+        - pin
+        - ring
+        - roller
+        - search
+        - shield
+        - star
+        - tag
+        - target
+        - thrust
+        - tool
+        - truck
+        - user
+        - users
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: string
+    - label: Numbers (home + about)
+      name: stats
+      widget: list
+      fields:
+      - label: Value
+        name: value
+        widget: string
+      - label: Label
+        name: label
+        widget: string
+    - label: Our values
+      name: values
+      widget: list
+      fields:
+      - label: Icon
+        name: icon
+        widget: select
+        options:
+        - arrow
+        - award
+        - ball
+        - box
+        - cart
+        - check
+        - chevron
+        - clamp
+        - clock
+        - close
+        - clutch
+        - coupling
+        - facebook
+        - gear
+        - globe
+        - grid
+        - handshake
+        - headset
+        - linear
+        - linkedin
+        - lock
+        - mail
+        - menu
+        - parts
+        - phone
+        - pin
+        - ring
+        - roller
+        - search
+        - shield
+        - star
+        - tag
+        - target
+        - thrust
+        - tool
+        - truck
+        - user
+        - users
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: Benefits (about + home)
+      name: benefits
+      widget: list
+      fields:
+      - label: Icon
+        name: icon
+        widget: select
+        options:
+        - arrow
+        - award
+        - ball
+        - box
+        - cart
+        - check
+        - chevron
+        - clamp
+        - clock
+        - close
+        - clutch
+        - coupling
+        - facebook
+        - gear
+        - globe
+        - grid
+        - handshake
+        - headset
+        - linear
+        - linkedin
+        - lock
+        - mail
+        - menu
+        - parts
+        - phone
+        - pin
+        - ring
+        - roller
+        - search
+        - shield
+        - star
+        - tag
+        - target
+        - thrust
+        - tool
+        - truck
+        - user
+        - users
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: Specialities (about page)
+      name: specialties
+      widget: list
+    - label: Featured brands (home logo strip)
+      name: featuredBrands
+      widget: list
+      field:
+        label: Brand
+        name: brand
+        widget: relation
+        collection: brands
+        search_fields: [title]
+        value_field: slug
+        display_fields: [title]
+- name: categories
+  label: Catalog · Categories
+  folder: data/categories
+  extension: yaml
+  format: yaml
+  create: true
+  identifier_field: name
+  slug: '{{fields.slug}}'
+  summary: '{{name}}'
+  sortable_fields:
+  - weight
+  - name
+  fields:
+  - label: Category name
+    name: name
+    widget: string
+  - label: URL slug
+    name: slug
+    widget: string
+    hint: 'URL: /products/category/<slug>. Do not change for existing categories.'
+    pattern:
+    - ^[a-z0-9-]+$
+    - lowercase letters, numbers and - only
+  - label: Menu order
+    name: weight
+    widget: number
+    value_type: int
+  - label: Icon
+    name: icon
+    widget: select
+    options:
+    - arrow
+    - award
+    - ball
+    - box
+    - cart
+    - check
+    - chevron
+    - clamp
+    - clock
+    - close
+    - clutch
+    - coupling
+    - facebook
+    - gear
+    - globe
+    - grid
+    - handshake
+    - headset
+    - linear
+    - linkedin
+    - lock
+    - mail
+    - menu
+    - parts
+    - phone
+    - pin
+    - ring
+    - roller
+    - search
+    - shield
+    - star
+    - tag
+    - target
+    - thrust
+    - tool
+    - truck
+    - user
+    - users
+  - label: Short text (home card)
+    name: blurb
+    widget: string
+  - label: Description (category page)
+    name: description
+    widget: text
+    required: false
+  - label: Image
+    name: image
+    widget: image
+    required: false
+  - label: Sub-categories
+    name: subcategories
+    widget: list
+    fields:
+    - label: Name
+      name: name
+      widget: string
+    - label: URL slug
+      name: slug
+      widget: string
+      hint: 'URL: /products/category/<category>/<slug>. Do not change for existing ones.'
+    - label: Page heading (optional)
+      name: heading
+      widget: string
+      required: false
+    - label: Description
+      name: description
+      widget: text
+      required: false
+    - label: Image
+      name: image
+      widget: image
+      required: false
+    summary: '{{fields.name}}'
+    collapsed: true
+- name: brands
+  label: Catalog · Brands
+  folder: content/brand
+  create: true
+  slug: '{{fields.slug}}'
+  filter:
+    field: entry_type
+    value: brand
+  summary: '{{title}}'
+  sortable_fields:
+  - title
+  fields:
+  - label: Entry type
+    name: entry_type
+    widget: hidden
+    default: brand
+  - label: Brand name
+    name: title
+    widget: string
+  - label: URL slug
+    name: slug
+    widget: string
+    hint: 'URL: /brand/<slug>. Do not change for existing brands.'
+    pattern:
+    - ^[a-z0-9-]+$
+    - lowercase letters, numbers and - only
+  - label: Logo
+    name: logo
+    widget: image
+    required: false
+  - label: Meta description (Google)
+    name: description
+    widget: text
+    required: false
+  - label: Brand description
+    name: body
+    widget: markdown
+    required: false
+- name: products
+  label: Catalog · Products (added / edited)
+  folder: content/product
+  create: true
+  slug: '{{fields.slug}}'
+  filter:
+    field: entry_type
+    value: product
+  summary: '{{title}}  ·  {{cat}}'
+  sortable_fields:
+  - title
+  - brand
+  description: 'New products, and existing products you edit. To edit an existing product, open it on the website and click "Edit this product in CMS" (visible after you have opened /admin once in this
+    browser). Bulk changes: use the Excel import (see README).'
+  fields:
+  - label: Entry type
+    name: entry_type
+    widget: hidden
+    default: product
+  - label: Product title
+    name: title
+    widget: string
+    hint: Usually "BRAND - PART NUMBER", e.g. SKF - 6205-2RS
+  - label: URL slug
+    name: slug
+    widget: string
+    hint: 'URL: /product/<slug>. Keep the old value when editing an existing product.'
+    pattern:
+    - ^[a-z0-9-]+$
+    - lowercase letters, numbers and - only
+  - label: Brand
+    name: brand
+    widget: string
+  - label: Part number
+    name: part
+    widget: string
+  - label: Category
+    name: cat
+    widget: select
+    options:
+    - label: Ball Bearings
+      value: ball-bearings
+    - label: Roller Bearings
+      value: roller-bearings
+    - label: Special Bearings
+      value: special-bearings
+    - label: Housings
+      value: housings
+    - label: Linear Bearings
+      value: linear-bearings
+    - label: Seals & Snap Rings
+      value: sealssnap-rings
+    - label: Thrust Bearings
+      value: thrust-bearings
+    - label: Couplings
+      value: couplings
+    - label: Clutch and Brakes
+      value: clutch-and-brakes
+    - label: Parts for Bearings
+      value: parts-for-bearings
+    - label: Tools for Bearings
+      value: tools-for-bearings
+    - label: Power Transmission
+      value: power-transmission
+    - label: Clamping Element
+      value: clamping-element
+    - label: Gearbox
+      value: gearbox
+    - label: Skate Bearings & Accessories
+      value: roller-and-inline-skates-accessories
+    - label: Bearing Accessories
+      value: bearing-accessories
+  - label: Sub-category slug
+    name: sub
+    widget: string
+    required: false
+    hint: e.g. ceramic-bearing – see Catalog · Categories
+  - label: Product type (shown on page)
+    name: subName
+    widget: string
+    required: false
+  - label: Price (INR, excl. GST) – leave empty for "Get a Quote"
+    name: price
+    widget: number
+    value_type: float
+    required: false
+  - label: Inner diameter (e.g. 25 mm)
+    name: di
+    widget: string
+    required: false
+  - label: Outer diameter (e.g. 52 mm)
+    name: do
+    widget: string
+    required: false
+  - label: Width (e.g. 15 mm)
+    name: w
+    widget: string
+    required: false
+  - label: Length
+    name: l
+    widget: string
+    required: false
+  - label: Weight (kg)
+    name: kg
+    widget: string
+    required: false
+  - label: Bore
+    name: bore
+    widget: string
+    required: false
+  - label: Cage
+    name: cage
+    widget: string
+    required: false
+  - label: Seal
+    name: seal
+    widget: string
+    required: false
+  - label: Lubrication
+    name: lub
+    widget: string
+    required: false
+  - label: Minimum order qty
+    name: moq
+    widget: string
+    required: false
+  - label: HSN code
+    name: hsn
+    widget: string
+    required: false
+  - label: Image
+    name: img
+    widget: image
+    required: false
+  - label: Datasheet PDF
+    name: pdf
+    widget: file
+    required: false
+  - label: Description
+    name: desc
+    widget: text
+    required: false
+  - label: Technical details
+    name: tech
+    widget: text
+    required: false
+  - label: Hide this product
+    name: draft
+    widget: boolean
+    default: false
+    required: false
+- name: settings
+  label: Settings
+  files:
+  - name: site
+    label: Site settings (phone, email, offices)
+    file: config/_default/params.yaml
+    fields:
+    - label: Tagline (top bar)
+      name: tagline
+      widget: string
+    - label: Default meta description
+      name: description
+      widget: text
+    - label: Logo
+      name: logo
+      widget: image
+    - label: Logo (retina, optional)
+      name: logo2x
+      widget: image
+      required: false
+    - label: Email
+      name: email
+      widget: string
+    - label: Phone
+      name: phone
+      widget: string
+    - label: Landline
+      name: phoneLandline
+      widget: string
+      required: false
+    - label: Business hours
+      name: hours
+      widget: string
+    - label: Founded
+      name: founded
+      widget: string
+    - label: Old shop URL (cart / sign-in backend)
+      name: shopURL
+      widget: string
+    - label: Image CDN URL
+      name: imageCDN
+      widget: string
+    - label: Offices
+      name: offices
+      widget: list
+      fields:
+      - label: Office name
+        name: name
+        widget: string
+      - label: Country / city
+        name: country
+        widget: string
+      - label: Company name
+        name: company
+        widget: string
+      - label: Address lines
+        name: address
+        widget: list
+      - label: Phones
+        name: phones
+        widget: list
+      - label: Email
+        name: email
+        widget: string
+    - label: Social links
+      name: social
+      widget: list
+      fields:
+      - label: Name
+        name: name
+        widget: string
+      - label: Icon
+        name: icon
+        widget: select
+        options:
+        - facebook
+        - instagram
+        - x
+        - linkedin
+      - label: URL
+        name: url
+        widget: string
+    - label: USD rate (1 INR = ? USD) for the currency switch
+      name: usdRate
+      widget: number
+      value_type: float
+  - name: menus
+    label: Menus
+    file: config/_default/menus.yaml
+    fields:
+    - label: Main menu
+      name: main
+      widget: list
+      fields:
+      - label: Label
+        name: name
+        widget: string
+      - label: Page (e.g. /about-us)
+        name: pageRef
+        widget: string
+        required: false
+      - label: External URL (instead of page)
+        name: url
+        widget: string
+        required: false
+      - label: Order
+        name: weight
+        widget: number
+        value_type: int
+      - label: Identifier (keep "products" for the mega menu)
+        name: identifier
+        widget: string
+        required: false
+      - label: Options
+        name: params
+        widget: object
+        fields:
+        - label: Show categories mega menu
+          name: mega
+          widget: boolean
+          required: false
+        required: false
+        collapsed: true
+    - label: Footer quick links
+      name: footer
+      widget: list
+      fields:
+      - label: Label
+        name: name
+        widget: string
+      - label: Page (e.g. /about-us)
+        name: pageRef
+        widget: string
+        required: false
+      - label: External URL
+        name: url
+        widget: string
+        required: false
+      - label: Order
+        name: weight
+        widget: number
+        value_type: int

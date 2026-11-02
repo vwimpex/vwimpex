@@ -1,0 +1,24 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Parts for Bearings
+slug: parts-for-bearings
+weight: 100
+icon: parts
+blurb: Needle cages, needles, balls, grease and lubrication.
+description: 'Bearings typically consist of the following components: Two rings, inner and outer, with raceways. Rolling elements - rollers or.'
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291055693411.jpeg
+subcategories:
+- name: Grease And Lubrication
+  slug: grease-and-lubrication
+  heading: Grease and Lubrication
+  description: Grease is a semisolid lubricant. Grease generally consists of a soap emulsified with mineral or vegetable oil.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301411434227.jpeg
+- name: Needle Cages INA
+  slug: needle-cages-ina
+  heading: NEEDLE ROLLER CAGES
+  description: INA needle roller and cage assemblies are self­-contained, ready-­to­-mount bearings. In applications where.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304786295619.jpeg
+- name: Needles And Balls
+  slug: needles-and-balls
+  heading: NEEDLES AND BALLS
+  description: 'Bearings typically consist of the following components: Two rings, inner and outer, with raceways. Rolling elements.'
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17690817417969.png

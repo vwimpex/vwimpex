@@ -1,0 +1,4 @@
+<select id="{{ .id }}" name="country" required>
+  <option value="" disabled selected>Select country</option>
+  {{- range site.Data.countries }}<option>{{ . }}</option>{{ end }}
+</select>

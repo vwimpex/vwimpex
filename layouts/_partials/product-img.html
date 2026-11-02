@@ -1,0 +1,10 @@
+{{- /* Product image like the old site: own photo, else the sub-category photo, else the category photo */ -}}
+{{- $u := "" -}}
+{{- with .img }}{{ $u = . }}{{ else -}}
+  {{- $cat := index site.Data.categories .cat | default dict -}}
+  {{- $sub := .sub -}}
+  {{- range $cat.subcategories }}{{ if and (eq .slug $sub) .image }}{{ $u = .image }}{{ end }}{{ end -}}
+  {{- if not $u }}{{ $u = $cat.image | default "" }}{{ end -}}
+{{- end -}}
+{{- if $u }}{{ $u = partial "img-url.html" $u }}{{ end -}}
+{{- return $u -}}

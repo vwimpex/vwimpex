@@ -1,0 +1,8 @@
+{{- /* Spec chips like the old site: Bore, Seal, Cage, Lubrication, Weight */ -}}
+{{- $s := slice -}}
+{{- with .bore }}{{ $s = $s | append (printf "Bore: %s" (title (lower .))) }}{{ end -}}
+{{- with .seal }}{{ $s = $s | append (printf "Seal: %s" (title (lower .))) }}{{ end -}}
+{{- with .cage }}{{ $s = $s | append (printf "Cage: %s" (title (lower .))) }}{{ end -}}
+{{- with .lub }}{{ $s = $s | append (printf "Lubrication: %s" (title (lower .))) }}{{ end -}}
+{{- with .kg }}{{ $s = $s | append (printf "Weight: %s Kg" .) }}{{ end -}}
+{{- return $s -}}

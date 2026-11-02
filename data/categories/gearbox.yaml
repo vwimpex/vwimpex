@@ -1,0 +1,19 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Gearbox
+slug: gearbox
+weight: 140
+icon: gear
+blurb: Helical and planetary gearboxes.
+description: A gearbox is a mechanical device utilized to increase the output torque or change the speed (RPM) of a motor. The motor's shaft is attached to one.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291049924169.png
+subcategories:
+- name: Helical Gearbox
+  slug: helicalgearbox
+  heading: Helical gearbox
+  description: 'helical/bevel helical gearboxesrnExtremely high output torques, silent operation and a long service life: These are the defining.'
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301413385022.png
+- name: Planetary Gearbox
+  slug: planetarygearbox
+  heading: Planetary gearbox
+  description: A planetary gearbox is a gearbox with the input shaft and the output shaft aligned. A planetary gearbox is used to transfer the.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17598333808996.png

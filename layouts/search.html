@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section section-tight">
+  <div class="container">
+    <div class="site-search" data-site-search data-base="{{ "/search/" | relURL }}" data-quote="{{ "/getQuote" | relURL }}">
+      <form class="hero-search search-big" role="search" action="{{ "/search" | relURL }}" method="get">
+        {{ partial "icon.html" (dict "name" "search" "size" 22) }}
+        <label class="sr-only" for="sq">Search</label>
+        <input id="sq" name="q" type="search" placeholder="Part number, brand or category" autocomplete="off" data-sq>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <div data-s-meta class="search-groups"></div>
+      <div data-s-products></div>
+      <p class="muted" data-s-status></p>
+      <div class="card search-help" data-s-help>
+        <h2 class="block-title">Can't find your part?</h2>
+        <p class="muted">We source from 277+ brands, including obsolete and hard-to-find numbers. Send us the part number and we'll quote within one business day.</p>
+        <a class="btn btn-primary" href="{{ "/getQuote" | relURL }}">Request a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

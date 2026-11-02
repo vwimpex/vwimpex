@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{- $count := index site.Data.brandcounts .Params.slug | default 0 }}
+<section class="page-hero">
+  <div class="container brand-hero">
+    <div class="brand-logo-box">
+      {{- with .Params.logo }}<img src="{{ . }}" alt="{{ $.Title }} logo" loading="eager">
+      {{- else }}<span class="brand-initial brand-initial-xl">{{ substr .Title 0 2 }}</span>{{ end }}
+    </div>
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a> <span>/</span> <a href="{{ "/brands" | relURL }}">Brands</a> <span>/</span> <span aria-current="page">{{ .Title }}</span></nav>
+      <p class="eyebrow">Brand</p>
+      <h1>{{ .Title }}</h1>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ "/getQuote" | relURL }}">Get a {{ .Title }} quote</a>
+        {{ if $count }}<a class="btn btn-ghost" href="#products">View {{ lang.FormatNumber 0 $count }} {{ .Title }} products</a>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container brand-layout">
+    <div class="prose brand-prose">
+      {{- with .Content }}{{ . }}{{ else }}<p>VW Impex supplies genuine {{ $.Title }} products worldwide. Send us the part number for price and delivery time.</p>{{ end }}
+    </div>
+    <aside class="contact-side">
+      <div class="card">
+        <h3>Why buy {{ .Title }} from VW Impex</h3>
+        <ul class="check-list check-list-sm">
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 18) }} Genuine parts, sourced worldwide</li>
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 18) }} Hard-to-find and obsolete numbers</li>
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 18) }} 9-day delivery rate</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="{{ "/getQuote" | relURL }}">Request a quote</a>
+      </div>
+    </aside>
+  </div>
+  {{- if $count }}
+  <div class="container" id="products">
+    <div class="product-browser" data-product-browser data-src="{{ printf "/data/brand/%s.json" .Params.slug | relURL }}" data-quote="{{ "/getQuote" | relURL }}">
+      <div class="list-head"><h2 class="block-title">{{ .Title }} products <span class="muted">(<span data-count>{{ lang.FormatNumber 0 $count }}</span>)</span></h2></div>
+      <div class="browser-tools">
+        <label class="search-field">{{ partial "icon.html" (dict "name" "search" "size" 18) }}<span class="sr-only">Search part number</span><input type="search" placeholder="Search {{ .Title }} part number or size" data-q></label>
+        <select data-brand aria-label="Filter by brand" hidden><option value="">All</option></select>
+      </div>
+      <div class="pcard-list" data-list></div>
+      <nav class="pager" data-pager aria-label="Pages"></nav>
+    </div>
+  </div>
+  {{- end }}
+</section>
+{{ partial "cta.html" . }}
+{{ end }}

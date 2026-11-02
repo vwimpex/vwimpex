@@ -1,0 +1,4 @@
+{{- /* Full URLs and CMS uploads (/images/...) stay as they are; old-site paths get the CDN prefix */ -}}
+{{- $u := . -}}
+{{- if not (or (hasPrefix $u "http") (hasPrefix $u "/images/")) }}{{ $u = printf "%s%s" site.Params.imageCDN $u }}{{ end -}}
+{{- return $u -}}

@@ -1,0 +1,18 @@
+# Only for `hugo server` (local development).
+# Production writes about-us.html and the host serves it at /about-us (uglyURLs).
+# The local Hugo server can't do that, so locally pages are folders (/about-us/index.html)
+# and clean links like /about-us work out of the box.
+uglyURLs = false
+
+# /getQuote/<product-slug> → the quote page (product is pre-filled by JS). On Netlify this is in static/_redirects.
+[server]
+  [[server.redirects]]
+    from = "/getQuote/**"
+    to = "/getQuote/"
+    status = 200
+
+  # Show our custom 404 page (with the local-development hint) for missing pages
+  [[server.redirects]]
+    from = "/**"
+    to = "/404.html"
+    status = 404

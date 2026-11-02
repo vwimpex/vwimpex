@@ -1,0 +1,4 @@
+{{- /* Old meta descriptions start with "Name; Parent; 601 products." – keep only the sentence after that */ -}}
+{{- $s := . | default "" -}}
+{{- $s = replaceRE `^.*?\d[\d,]*\s+products\.\s*` "" $s -}}
+{{- return (trim $s " ") -}}

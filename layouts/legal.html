@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section section-tight">
+  <div class="container legal-layout">
+    <article class="prose legal-prose">{{ .Content }}</article>
+    <aside class="contact-side">
+      <div class="card">
+        <h3>Policies</h3>
+        <ul class="sidebar-links">
+          {{- range where site.RegularPages "Layout" "legal" }}
+          <li><a href="{{ partial "clean-url.html" .RelPermalink }}"{{ if eq . $ }} class="is-active" aria-current="page"{{ end }}>{{ .Title }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Questions?</h3>
+        <ul class="contact-list">
+          <li>{{ partial "icon.html" (dict "name" "mail" "size" 18) }}<a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
+          <li>{{ partial "icon.html" (dict "name" "phone" "size" 18) }}<a href="tel:{{ site.Params.phone }}">{{ site.Params.phone }}</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+{{ end }}

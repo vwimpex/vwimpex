@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . }}
+</head>
+<body class="page-{{ .Layout | default (cond .IsHome "home" "default") }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{- partial "header.html" . }}
+  <main id="main">
+    {{- block "main" . }}{{ end }}
+  </main>
+  {{- partial "footer.html" . }}
+  {{- $js := resources.Get "js/main.js" | js.Build (dict "minify" hugo.IsProduction) | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{- if .IsHome }}
+  {{- /* Netlify Identity: lets CMS invite / password-reset links that land on the home page continue to /admin/ */}}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+      });
+    }
+  </script>
+  {{- end }}
+</body>
+</html>

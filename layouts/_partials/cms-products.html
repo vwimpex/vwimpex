@@ -1,0 +1,6 @@
+{{- /* Products added/edited in the CMS (content/product/*.md) → dict slug → params. Cached once per build. */ -}}
+{{- $m := dict -}}
+{{- range where site.RegularPages "Section" "product" -}}
+  {{- if and .File (strings.HasSuffix .File.Filename ".md") -}}{{- $m = merge $m (dict .Params.slug (merge .Params (dict "title" .Title))) -}}{{- end -}}
+{{- end -}}
+{{- return $m -}}

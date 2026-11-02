@@ -1,0 +1,24 @@
+/* Design tokens – VW Impex brand (teal + logo red) */
+:root {
+  --primary: #0b4f6c;
+  --primary-600: #083a50;
+  --primary-50: #e6f0f4;
+  --accent: #d32432;
+  --accent-50: #fdecee;
+  --ink: #0a1f2a;
+  --text: #33454d;
+  --muted: #64767e;
+  --navy: #07202c;
+  --line: #e2e8eb;
+  --bg: #ffffff;
+  --bg-soft: #f4f7f8;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 1px 2px rgba(15, 29, 35, .06);
+  --shadow: 0 10px 30px -12px rgba(15, 29, 35, .18);
+  --shadow-lg: 0 24px 60px -20px rgba(15, 29, 35, .28);
+  --font-head: "Sora", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --container: 1200px;
+  --header-h: 76px;
+}

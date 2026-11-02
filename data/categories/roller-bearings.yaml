@@ -1,0 +1,191 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Roller Bearings
+slug: roller-bearings
+weight: 20
+icon: roller
+blurb: Cylindrical, spherical, tapered and needle roller bearings.
+description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels – and transfer loads.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291070237179.jpeg
+subcategories:
+- name: Barrel Roller Bearings FAG
+  slug: barrel-roller-bearings-fag
+  heading: BARREL ROLLER BEARINGS
+  description: Barrel roller bearings are single-row, self-aligning roller bearings. They comprise solid outer rings with a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295319699947.jpeg
+- name: Bottom Roller Bearings
+  slug: bottom-roller-bearings
+  description: Bottom roller bearings for textile machinery These are needle roller bearings that support the bottom rollers.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295322474532.jpeg
+- name: CARB Roller Bearings
+  slug: carb-roller-bearings
+  description: CARB toroidal roller bearings have one row of long, slightly barrel-shaped symmetrical rollers and torus-shaped.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301308962392.jpeg
+- name: Cooper Split Spherical Roller Bearings
+  slug: cooper-split-spherical-roller-bearings
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17597420271114.png
+- name: Crescent Swing Bearings
+  slug: crescent-swing-bearings
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels –.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17443519547557.png
+- name: Cross Roller Bearing
+  slug: cross-roller-bearing
+  description: Crossed Roller Bearings consist of an outer ring, an inner ring, and a plurality of rollers and spacers. The roller.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301314587275.jpeg
+- name: Cylindrical Roller Bearing Double Row
+  slug: cylindrical-roller-bearing-double-row
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301317719354.jpeg
+- name: Cylindrical Roller Bearing Multi Row
+  slug: cylindrical-roller-bearing-multi-row
+  description: Multi-row cylindrical roller bearings ensure high functional precision for rolling plants and long.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301319571297.jpeg
+- name: Cylindrical Roller Bearing FAG
+  slug: cylindrical-roller-bearing-fag
+  heading: Cylindrical Roller Bearing Units
+  description: The high-precision cylindrical roller bearing meets the highest demands. It is both highly radial.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301318671384.jpeg
+- name: Cylindrical Roller Bearing Single Row
+  slug: cylindrical-roller-bearing-single-row
+  heading: Cylindrical Roller Bearing With Cage
+  description: Cylindrical roller bearings with cage are units comprising solid inner and outer rings and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323567112438.png
+- name: Cylindrical Roller Bearings Single Row
+  slug: cylindrical-roller-bearings-single-row
+  heading: Cylindrical Roller Bearings With Cage Units
+  description: Cylindrical roller bearings with cage are units comprising solid inner and outer rings and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301321572945.jpeg
+- name: Cylindrical Roller Bearings Without Outer Ring
+  slug: cylindrical-roller-bearings-without-outer-ring
+  heading: Cylindrical roller bearings Without Outer Ring
+  description: Full complement cylindrical roller bearings are designed to withstand heavy loads. At the.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301322598233.jpeg
+- name: Cylindrical Roller Bearing Insulated FAG
+  slug: cylindrical-roller-bearing-insulated-fag
+  heading: Cylindrical Roller Insulated Bearing
+  description: Cylindrical Roller Insulated bearing are designed to protect a bearing against electric current.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17598168606105.png
+- name: Double Direction Taper Roller Bearing Neutral
+  slug: double-direction-taper-roller-bearing-neutral
+  heading: Double Direction Taper Roller Bearing Units
+  description: Double row tapered roller bearings in the TDO and TDI designs, in many variants and with.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301334277810.jpeg
+- name: Double Row NR PP
+  slug: double-row-nr-pp
+  heading: Double row NR PP
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels – and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301352842234.png
+- name: Super Precision Double Row Tapered Roller Bearing Flanged Cup Type
+  slug: super-precision-double-row-tapered-roller-bearing-flanged-cup-type
+  heading: Double Row Tapered Roller Bearing Flanged Cup Type
+  description: Gamet Double Row Tapered Roller Bearing Flanged Cup Type
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370239007837.png
+- name: Super Precision Double Row Tapered Roller Bearing Plain Cup Type
+  slug: super-precision-double-row-tapered-roller-bearing-plain-cup-type
+  heading: Double Row Tapered Roller Bearing Plain Cup Type
+  description: Gamet Double Row Tapered Roller Bearing Plain Cup Type
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370239282956.png
+- name: Drawn Cup Closed End
+  slug: drawn-cup-closed-end
+  heading: Drawn cup Closed End
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels –.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301353968109.png
+- name: Eccentric Roller Bearings
+  slug: eccentric-roller-bearings
+  heading: Eccentric Roller bearings
+  description: A cycloidal drive or cycloidal speed reducer is a mechanism for reducing the speed of an input shaft by a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17598169237252.png
+- name: Four Row Tapered Roller Bearing
+  slug: four-row-tapered-roller-bearing
+  heading: Four Row Tapered Roller BearinG
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301396626537.jpeg
+- name: Full Complement Cylindrical Roller Bearing
+  slug: full-complement-cylindrical-roller-bearing
+  heading: Full Complement Cylindrical Roller bearing
+  description: Full complement cylindrical roller bearings are suitable for arrangements, where are the high.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323534651882.png
+- name: Harmonic Drive Bearings
+  slug: harmonic-drive-bearings
+  description: Harmonic drive, also called Harmonic Drive gear or a harmonic gear. It is a mechanical speed-changing device that.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17152392999968.png
+- name: Journal Roller Bearings
+  slug: journal-roller-bearings
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels –.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301436413517.png
+- name: Matched Tapered Roller Bearings
+  slug: matched-tapered-roller-bearings
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17600964171427.png
+- name: Needle Roller Bearings
+  slug: needle-roller-bearings
+  description: Needle roller bearings are bearings with cylindrical rollers that are small in diameter. In spite of their low.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304787225940.png
+- name: Roller Bearing For Corrugators
+  slug: roller-bearing-for-corrugators
+  heading: Roller Bearing for Corrugators
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16464777149495.png
+- name: Cylindrical Roller Bearing Single Row Timken
+  slug: cylindrical-roller-bearing-single-row-timken
+  heading: Single Row Cylindrical Roller Bearing
+  description: Cylindrical Roller Bearing Single Row rn
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301320691562.jpeg
+- name: Single Row Spherical Roller Bearing
+  slug: single-row-spherical-roller-bearing
+  heading: Single row spherical roller bearing
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304866922702.jpeg
+- name: Spherical Roller Bearing SKF
+  slug: spherical-roller-bearing-skf
+  heading: Spherical Roller Bearing Units
+  description: SKF Spherical Roller Bearings are designed to work in applications where severe misalignment exists.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304919268382.jpeg
+- name: Spherical Roller Bearing
+  slug: spherical-roller-bearing
+  heading: Spherical Roller Bearings
+  description: Spherical Roller Bearings are designed to work in applications where severe misalignment exists whether from.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323566716995.png
+- name: Spiral Roller Bearing
+  slug: spriral-roller-bearing
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or wheels –.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17443523756335.png
+- name: Split Spherical Roller Bearings
+  slug: split-spherical-roller-bearings
+  description: Roller bearings support and guide rotating or oscillating machine elements – such as shafts, axles or.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304922965215.jpeg
+- name: Double Direction Taper Roller Bearing FAG
+  slug: double-direction-taper-roller-bearing-fag
+  heading: Taper Roller Bearing Double Row
+  description: FAG Double row tapered roller bearings in the TDO and TDI designs, in many variants and with different.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301332951945.jpeg
+- name: SKF Taper Roller Bearing
+  slug: skf-taper-roller-bearing-2
+  heading: Taper Roller Bearings Cup and Cone
+  description: Tapered roller bearings feature a cup and cone assembly. The cup is comprised of the outer ring and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304904281592.jpeg
+- name: Double Direction Taper Roller Bearing SKF
+  slug: double-direction-taper-roller-bearing-skf
+  heading: Taper Roller Double Direction Bearing
+  description: SKF manufactures double row tapered roller bearings in the TDO and TDI designs, in many variants and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301334858967.jpeg
+- name: Gamet Tapered Roller Bearing Flanged Cup Type
+  slug: gamet-tapered-roller-bearing-flanged-cup-type
+  heading: Tapered Roller Bearing Flanged Cup Type
+  description: Gamet Tapered Roller Bearing Flanged Cup Type
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370233736841.png
+- name: Super Precision Tapered Roller Bearing Integral Spring Carrier Cup Type
+  slug: super-precision-tapered-roller-bearing-integral-spring-carrier-cup-type
+  heading: Tapered Roller Bearing Integral Spring Carrier Cup Type
+  description: Gamet Tapered Roller Bearing Integral Spring Carrier Cup Type
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370230671197.png
+- name: Gamet Tapered Roller Bearing Plain Cup
+  slug: gamet-tapered-roller-bearing-plain-cup
+  heading: Tapered Roller Bearing Plain Cup
+  description: Gamet Tapered Roller Bearing Plain Cup
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17370232433915.png
+- name: Tapered Roller Bearings
+  slug: tapered-roller-bearings
+  heading: Tapered Roller Bearings Double Row
+  description: SKF Double row tapered roller bearings feature two sets of tapered raceways and tapered rollers, and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304934084207.jpeg

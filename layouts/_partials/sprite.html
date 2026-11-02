@@ -1,0 +1,8 @@
+{{- /* Builds one SVG sprite from data/icons.yaml and returns its URL (cached, so it runs once per build) */ -}}
+{{- $s := `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">` -}}
+{{- range $name, $path := site.Data.icons -}}
+{{- $s = printf `%s<symbol id="i-%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">%s</symbol>` $s $name $path -}}
+{{- end -}}
+{{- $s = printf "%s</svg>" $s -}}
+{{- $r := resources.FromString "i.svg" $s -}}
+{{- return $r.RelPermalink -}}

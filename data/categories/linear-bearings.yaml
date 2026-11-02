@@ -1,0 +1,87 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Linear Bearings
+slug: linear-bearings
+weight: 50
+icon: linear
+blurb: Linear guides, rails, ball splines, slide units and shafts.
+description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing block. The coefficient.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291053322977.jpeg
+subcategories:
+- name: Ball Screw
+  slug: ball-screw
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing block. The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323555894665.png
+- name: Ball Screw Accessories
+  slug: ball-screw-accessories
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17543892059103.png
+- name: Ball Spline
+  slug: ball-spline-1
+  heading: BALL SPLINE
+  description: The Ball Spline is a rolling guide spline bearing. This is an innovative product with a ball rolling on a groove connected to.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323559754299.png
+- name: Linear Ball Bearing
+  slug: linear-ball-bearing
+  description: Ball bearing slides are the most common type of linear slide. This low-friction linear movement can be powered by a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17550847579517.png
+- name: Linear Bearing INA
+  slug: linear-bearing-ina
+  heading: LINEAR BALL BEARING BUSHES & SHAFT GUIDES
+  description: Linear ball bearings – also known as ball bearing bushes or shaft guides – use linear.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301439794855.jpeg
+- name: Linear Ball Bearing Europe
+  slug: linear-ball-bearing-europe
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17201740196691.png
+- name: Linear Ball Bearing Unit
+  slug: linear-ball-bearing-unit
+  description: Linear ball bearing units, which include a bearing and housing, are available as single, tandem or quadro units.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301440884236.jpeg
+- name: Franke Linear Bearings
+  slug: franke-linear-bearings
+  heading: Linear Bearings Units
+  description: Franke
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17519708333172.png
+- name: Linear Flat Cages
+  slug: linear-flat-cages
+  description: Flat roller cages is a precision linear motion guide consisting of a high accuracy cage and very precise rollers, and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301441905648.jpeg
+- name: Linear Guide Carriage
+  slug: linear-guide-carriage
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301443125286.jpeg
+- name: Linear Guides
+  slug: linear-guides
+  description: Linear guide ways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing block.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301456439266.jpeg
+- name: Linear Rails
+  slug: linear-rails
+  description: A linear guide is a linear motion part for smooth motion in the direction of the rail without rattling.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304759552781.jpeg
+- name: Linear Recirculating Unit
+  slug: linear-recirculating-unit
+  heading: Linear Recirculating unit
+  description: Linear Recirculating Unit; Linear Bearings. Recirculating units allow long strokes with consistent, high accuracy for applications in a normal working environment, a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304761017333.jpeg
+- name: Linear Shafts
+  slug: linear-shafts
+  description: Linear shafts are used to support or constrain sliding loads. linear shafts are precision ground for exceptional.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304761971278.jpeg
+- name: Ball Spline
+  slug: ball-spline
+  heading: Linear Slide Unit
+  description: A linear slider unit, also known as a linear slide, is a machine element that allows for smooth, low-friction movement.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323558824863.png
+- name: Slide Rail Set
+  slug: slide-rail-set
+  heading: SLIDE RAIL SET
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing block.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17212161528175.png
+- name: Slide Unit
+  slug: slide-unit
+  description: Linear guideways provides linear motion by re-circulating rolling elements between a profiled rail and a bearing block. The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17550838977511.png
+- name: Tychoway Linear Bearings
+  slug: tychoway-linear-bearings
+  description: The extremely low friction and high load capacity of Tychoway Linear Roller Bearings provide accurate.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304959738676.jpeg

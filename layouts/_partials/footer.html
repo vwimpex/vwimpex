@@ -1,0 +1,35 @@
+{{- $shop := site.Params.shopURL }}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      {{ partial "logo.html" . }}
+      <p>Online multibrand store of industrial bearings, linear guides and power transmission products. {{ site.Params.tagline }}.</p>
+      <div class="social">
+        {{- range site.Params.social }}<a href="{{ .url }}" aria-label="{{ .name }}" rel="noopener" target="_blank">{{ partial "icon.html" (dict "name" .icon) }}</a>{{ end }}
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-title">Quick links</h3>
+      <ul class="footer-links">
+        {{- range site.Menus.footer }}<li><a href="{{ partial "clean-url.html" .URL }}">{{ .Name }}</a></li>{{ end }}
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Categories</h3>
+      <ul class="footer-links">
+        {{- range first 9 (sort site.Data.categories "weight") }}<li><a href="{{ printf "/products/category/%s" .slug | relURL }}">{{ .name }}</a></li>{{ end }}
+      </ul>
+    </div>
+    {{- range site.Params.offices }}
+    <div class="footer-office">
+      <h3 class="footer-title">{{ .name }} · {{ .country }}</h3>
+      <p>{{ delimit .address "<br>" | safeHTML }}</p>
+      <p>{{ range .phones }}<a href="tel:{{ . }}">{{ . }}</a><br>{{ end }}<a href="mailto:{{ .email }}">{{ .email }}</a></p>
+    </div>
+    {{- end }}
+  </div>
+  <div class="container footer-bottom">
+    <p>© {{ now.Year }} VW Impex. All rights reserved.</p>
+    <p>Prices in USD · Worldwide shipping</p>
+  </div>
+</footer>

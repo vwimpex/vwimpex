@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{- $p := .Params }}
+{{- $catURL := printf "/products/category/%s" $p.cat }}
+{{- $catData := index site.Data.categories $p.cat | default dict }}
+{{- $catName := $p.catName | default $catData.name }}
+{{- $subTitle := $p.subTitle }}
+{{- if not $subTitle }}{{ range $catData.subcategories }}{{ if eq .slug $p.sub }}{{ $subTitle = .heading | default .name }}{{ end }}{{ end }}{{ end }}
+{{- $subTitle = $subTitle | default $p.subName }}
+{{- $dims := partial "product-dims.html" $p }}{{ $img := partial "product-img.html" $p }}
+{{- $brandURL := index (partialCached "brand-map.html" . "brands") (lower (replaceRE `[^A-Za-z0-9]` "" $p.brand)) }}
+<section class="page-hero page-hero-product">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a> <span>/</span>
+      <a href="{{ $catURL | relURL }}">{{ $catName }}</a> <span>/</span>
+      {{- with $p.sub }}<a href="{{ printf "%s/%s" $catURL . | relURL }}">{{ $subTitle }}</a> <span>/</span>{{ end }}
+      <span aria-current="page">{{ $p.part }}</span>
+    </nav>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container product-layout">
+    <div class="product-gallery card">
+      {{- with $img }}<img src="{{ . }}" alt="{{ $.Title }}" width="420" height="420" onerror="this.remove()">
+      {{- else }}<span class="product-placeholder">{{ partial "icon.html" (dict "name" "ball" "size" 120) }}</span>{{ end }}
+      <span class="brand-chip">{{ $p.brand }}</span>
+    </div>
+
+    <div class="product-info">
+      <p class="eyebrow">{{ $subTitle }}</p>
+      <h1 class="product-title">{{ $p.brand }} <span>{{ $p.part }}</span></h1>
+      {{ with $dims }}<p class="product-dims">{{ . }}</p>{{ end }}
+      {{ with $p.price }}<p class="price price-lg"><span data-inr="{{ . }}">₹{{ lang.FormatNumber 2 (float .) }}</span> <small>excl. GST</small></p>{{ end }}
+
+      <ul class="quote-points">
+        <li>{{ partial "icon.html" (dict "name" "check" "size" 18) }} Availability: <strong>Sourced to order</strong></li>
+        <li>{{ partial "icon.html" (dict "name" "truck" "size" 18) }} Standard dispatch: <strong>7–9 business days</strong></li>
+        {{ with $p.moq }}<li>{{ partial "icon.html" (dict "name" "box" "size" 18) }} Minimum order: <strong>{{ . }}</strong></li>{{ end }}
+      </ul>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="{{ printf "/getQuote/%s" $p.slug | relURL }}">Get a Quote</a>
+        <a class="btn btn-ghost btn-lg" href="mailto:{{ site.Params.email }}?subject={{ printf "Enquiry: %s %s" $p.brand $p.part | urlquery }}">Email us</a>
+      </div>
+      <p class="muted small">Get a quote for exact pricing and lead time.</p>
+      {{- /* Editors only: opens this product in the CMS (existing CMS file) or a new CMS entry pre-filled with the current data */}}
+      {{- $fields := slice "title" "slug" "brand" "part" "cat" "sub" "subName" "price" "di" "do" "w" "l" "kg" "bore" "cage" "seal" "lub" "moq" "hsn" "pdf" "img" "desc" "tech" }}
+      {{- $q := slice }}{{ range $f := $fields }}{{ with (cond (eq $f "title") $.Title (index $p $f)) }}{{ $q = $q | append (printf "%s=%s" $f (replace (urlquery (string .)) "+" "%20")) }}{{ end }}{{ end }}
+      {{- $editURL := printf "/admin/#/collections/products/new?%s" (delimit $q "&") }}
+      {{- if index (partialCached "cms-products.html" . "cms") $p.slug }}{{ $editURL = printf "/admin/#/collections/products/entries/%s" $p.slug }}{{ end }}
+      <a class="edit-link" hidden data-editor-only href="{{ $editURL | safeURL }}">✎ Edit this product in CMS</a>
+
+
+      <table class="spec-table">
+        <caption>Specifications</caption>
+        <tbody>
+          <tr><th>Brand</th><td>{{ with $brandURL }}<a href="{{ . }}">{{ $p.brand }}</a>{{ else }}{{ $p.brand }}{{ end }}</td></tr>
+          <tr><th>Part number</th><td>{{ $p.part }}</td></tr>
+          <tr><th>Category</th><td><a href="{{ $catURL | relURL }}">{{ $catName }}</a></td></tr>
+          {{ with $p.di }}<tr><th>Inner diameter (d)</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.do }}<tr><th>Outer diameter (D)</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.w }}<tr><th>Width (B)</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.l }}<tr><th>Length</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.kg }}<tr><th>Weight</th><td>{{ . }} kg</td></tr>{{ end }}
+          {{ with $p.bore }}<tr><th>Bore</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.cage }}<tr><th>Cage</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.seal }}<tr><th>Seal</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.lub }}<tr><th>Lubrication</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with $p.hsn }}<tr><th>HSN code</th><td>{{ . }}</td></tr>{{ end }}
+        </tbody>
+      </table>
+      {{ with $p.pdf }}<a class="link-arrow" href="{{ . }}" rel="noopener">Download datasheet (PDF) {{ partial "icon.html" (dict "name" "arrow" "size" 16) }}</a>{{ end }}
+    </div>
+  </div>
+
+  {{- if or $p.desc $p.tech }}
+  <div class="container product-details">
+    <h2 class="block-title">Details</h2>
+    <div class="prose">
+      {{ with $p.desc }}<p>{{ . | htmlEscape | replaceRE "\n+" "<br>" | safeHTML }}</p>{{ end }}
+      {{ with $p.tech }}<h3>Technical details</h3><p>{{ . | htmlEscape | replaceRE "\n+" "<br>" | safeHTML }}</p>{{ end }}
+    </div>
+  </div>
+  {{- end }}
+</section>
+{{ partial "cta.html" . }}
+{{ end }}

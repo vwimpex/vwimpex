@@ -1,0 +1,10 @@
+<article class="card office-card">
+  <p class="eyebrow">{{ .name }}</p>
+  <h3>{{ .country }}</h3>
+  <p class="muted">{{ .company }}</p>
+  <ul class="contact-list">
+    <li>{{ partial "icon.html" (dict "name" "pin" "size" 18) }}<span>{{ delimit .address "<br>" | safeHTML }}</span></li>
+    <li>{{ partial "icon.html" (dict "name" "phone" "size" 18) }}<span>{{ range $i, $p := .phones }}{{ if $i }}, {{ end }}<a href="tel:{{ $p }}">{{ $p }}</a>{{ end }}</span></li>
+    <li>{{ partial "icon.html" (dict "name" "mail" "size" 18) }}<a href="mailto:{{ .email }}">{{ .email }}</a></li>
+  </ul>
+</article>

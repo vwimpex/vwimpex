@@ -1,0 +1,12 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Bearing Accessories
+slug: bearing-accessories
+weight: 160
+icon: shield
+blurb: AEGIS bearing protection rings.
+description: ''
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17531839385505.png
+subcategories:
+- name: Aegis Bearing Protection Ring
+  slug: aegis-bearing-protection-ring
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17533432204307.png

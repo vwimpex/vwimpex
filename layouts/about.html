@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+<section class="section">
+  <div class="container split split-top">
+    <div class="prose">
+      <p class="eyebrow">Who we are</p>
+      <h2>Over a decade of sourcing industrial motion parts</h2>
+      {{ .Content }}
+    </div>
+    <dl class="stats stats-card card">
+      {{- range site.Data.content.stats }}
+      <div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>
+      {{- end }}
+    </dl>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>The right bearing at the right price</h2>
+      <p>Our top priority is giving each customer the right bearing at the right price, and making sure they are fully satisfied with the product and the service. Partnering with us brings:</p>
+    </div>
+    <div class="benefit-grid">
+      {{- range site.Data.content.benefits }}
+      <div class="card benefit">
+        <span class="icon-badge">{{ partial "icon.html" (dict "name" .icon "size" 22) }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Specialities</p>
+      <h2>Products we specialise in</h2>
+    </div>
+    <ul class="chip-list chip-list-center">
+      {{- range site.Data.content.specialties }}<li><span class="chip">{{ . }}</span></li>{{ end }}
+    </ul>
+  </div>
+</section>
+
+{{ partial "values.html" . }}
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Where we are</p>
+      <h2>Two offices, customers worldwide</h2>
+    </div>
+    <div class="office-grid">{{ range site.Params.offices }}{{ partial "office-card.html" . }}{{ end }}</div>
+  </div>
+</section>
+
+{{ partial "cta.html" . }}
+{{ end }}

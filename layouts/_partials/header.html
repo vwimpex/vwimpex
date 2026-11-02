@@ -1,0 +1,71 @@
+{{- $shop := site.Params.shopURL }}
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:{{ site.Params.phone }}">{{ partial "icon.html" (dict "name" "phone" "size" 15) }} {{ site.Params.phone }}</a>
+      <a href="mailto:{{ site.Params.email }}">{{ partial "icon.html" (dict "name" "mail" "size" 15) }} {{ site.Params.email }}</a>
+    </div>
+    <div class="topbar-right">
+      <span>{{ site.Params.tagline }}</span>
+      <div class="currency" role="group" aria-label="Currency" data-usd-rate="{{ site.Params.usdRate }}">
+        <button type="button" data-cur="INR" class="is-active">₹ INR</button><button type="button" data-cur="USD">$ USD</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    {{ partial "logo.html" . }}
+
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul class="nav-list">
+        {{- range site.Menus.main }}
+        {{- if .Params.mega }}
+        <li class="nav-item has-mega">
+          <button class="nav-link" type="button" aria-expanded="false" aria-controls="mega-products" data-mega-toggle>
+            {{ .Name }} {{ partial "icon.html" (dict "name" "chevron" "size" 14) }}
+          </button>
+          <div class="mega" id="mega-products">
+            <div class="container mega-inner">
+              <div class="mega-grid">
+                {{- range (sort site.Data.categories "weight") }}
+                <a class="mega-item" href="{{ printf "/products/category/%s" .slug | relURL }}">
+                  <span class="mega-icon">{{ partial "icon.html" (dict "name" .icon "size" 20) }}</span>
+                  <span>
+                    <strong>{{ .name }}</strong>
+                    <small>{{ len .subcategories }} sub-categories</small>
+                  </span>
+                </a>
+                {{- end }}
+              </div>
+              <aside class="mega-aside">
+                <p class="eyebrow">Can't find a part?</p>
+                <p>Send us the part number or a photo of the old bearing. We source obsolete and hard-to-find parts.</p>
+                <a class="btn btn-primary btn-sm" href="{{ "/getQuote" | relURL }}">Request a quote</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+        {{- else }}
+        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+        <li class="nav-item"><a class="nav-link{{ if $active }} is-active{{ end }}" href="{{ partial "clean-url.html" .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
+      <div class="nav-actions-mobile">
+        <a class="btn btn-ghost" href="{{ "/signin" | relURL }}">Sign in</a>
+        <a class="btn btn-primary" href="{{ "/getQuote" | relURL }}">Get a Quote</a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="{{ "/search" | relURL }}" aria-label="Search parts">{{ partial "icon.html" (dict "name" "search" "size" 20) }}</a>
+      <a class="btn btn-ghost" href="{{ "/signin" | relURL }}">{{ partial "icon.html" (dict "name" "user" "size" 18) }} Sign in</a>
+      <a class="btn btn-accent" href="{{ "/getQuote" | relURL }}">Get a Quote</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        {{ partial "icon.html" (dict "name" "menu" "size" 24) }}
+      </button>
+    </div>
+  </div>
+</header>

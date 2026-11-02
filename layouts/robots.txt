@@ -1,0 +1,7 @@
+User-agent: *
+{{- if getenv "HUGO_NOINDEX" }}
+Disallow: /
+{{- else }}
+Allow: /
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- end }}

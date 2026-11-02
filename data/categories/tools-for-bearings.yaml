@@ -1,0 +1,27 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Tools for Bearings
+slug: tools-for-bearings
+weight: 110
+icon: tool
+blurb: Bearing heaters, mechanical and hydraulic pullers.
+description: Mounting Small and medium size bearings are generally cold mounted. Traditional methods can cause forces to be transmitted through the.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291832398185.jpeg
+subcategories:
+- name: Heater
+  slug: heater
+  heading: Bearing Heaters
+  description: Induction heating is the most common method for heating and radially expanding bearings prior to installation and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295320576176.jpeg
+- name: Fitting Toolkit
+  slug: fitting-toolkit
+  description: Fitting Toolkit; Tools For Bearings. The right combination of impact ring and sleeve allows effective transmission of mounting force to the bearing ring with the.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301362584006.jpeg
+- name: Hydraulic Pullers
+  slug: hydraulic-pullers
+  description: They are ideal for removing all kinds of shaft-fitted parts. Hydraulic pullers are designed to help you extend bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301416504701.jpeg
+- name: Mechanical Puller
+  slug: mechanical-puller
+  heading: Mechanical Pullers
+  description: Mechanical extractors can be used to dismantle small and medium sized rolling bearings that are located with a tight.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304776314508.jpeg

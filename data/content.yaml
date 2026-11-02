@@ -1,0 +1,95 @@
+# Shared text blocks used on several pages
+
+features:
+  - { icon: globe, title: "Worldwide delivery", text: "Free shipping on orders over $99" }
+  - { icon: lock, title: "Secure payment", text: "100% secure checkout" }
+  - { icon: headset, title: "24/7 support", text: "Talk to a bearing specialist" }
+  - { icon: shield, title: "Genuine parts", text: "From authorised sources" }
+
+stats:
+  - { value: "2012", label: "In business since" }
+  - { value: "277+", label: "Brands stocked" }
+  - { value: "2.3 lakh+", label: "Part numbers" }
+  - { value: "9 days", label: "Guaranteed delivery" }
+
+values:
+  - icon: target
+    title: "Commitment"
+    text: "We are passionate about what we do. We believe our work makes a difference to the way our customers do business."
+  - icon: users
+    title: "Customer-driven"
+    text: "We put customers at the centre of our business and consistently strive to exceed their expectations."
+  - icon: award
+    title: "Excellence"
+    text: "We bring innovation to our customers' businesses and encourage our people to think afresh every day."
+  - icon: check
+    title: "Quality"
+    text: "We assure the right quality across products, services and processes, and work with partners who share our standards."
+  - icon: handshake
+    title: "Teamwork"
+    text: "We are driven by common goals. We share information and skills, and stay inclusive in thought and action."
+
+benefits:
+  - { icon: cart, title: "One-stop shopping", text: "Bearings, seals, couplings and tools from one supplier." }
+  - { icon: grid, title: "Vast bearing categories", text: "16 categories and 250+ sub-categories." }
+  - { icon: globe, title: "Worldwide sourcing", text: "A network that reaches hard-to-find and obsolete parts." }
+  - { icon: search, title: "Bearing detective", text: "Send a worn part or an old number, we identify it." }
+  - { icon: truck, title: "Fast shipping", text: "Imports and exports with a 9-day delivery rate." }
+  - { icon: tag, title: "Fixed price program", text: "Predictable pricing for repeat orders." }
+  - { icon: headset, title: "24/7 support", text: "Specialists who answer when you need them." }
+  - { icon: users, title: "Experienced staff", text: "A team with 12+ years in industrial motion." }
+
+specialties:
+  - Eccentric Bearings
+  - Precision Bearings
+  - Linear Motion Guides & Rails
+  - Ceramic Bearings
+  - Plastic Bearings
+  - Nilos Ring
+  - High Temperature Bearings
+  - Stainless Steel Bearings
+  - Cam Followers
+  - Aerospace Bearings
+  - Combined Bearings
+  - Track Rollers
+  - Bearing Pullers
+  - Couplings
+  - Oil Seals
+  - Precision Locknuts
+  - Bottom Roller Bearings
+  - Rod Ends
+  - Needle Bearings
+  - Spherical Plain Bearings
+  - Magneto Bearings
+  - Thrust Bearings
+  - Spherical Roller Bearings
+  - Cylindrical Roller Bearings
+  - Insulated Bearings
+  - Taper Roller Bearings
+  - Housings & Sleeves
+  - Angular Contact Bearings
+  - Ballscrew Bearings
+  - Clutch and Brakes
+  - Gears
+  - Planetary Gearbox
+  - Plain Bushes
+  - Mounting Units
+  - Mounting & Dismounting Tools
+
+featuredBrands:
+  - skf-bearings
+  - fag-import-1
+  - ina-bearings
+  - nsk
+  - ntn-bearings
+  - timken-bearings
+  - thk-linear-and-bearings
+  - hiwin-linear
+  - iko-bearings
+  - nadella-bearings
+  - snr-bearings
+  - rbc
+  - nilos
+  - mcgill-bearings
+  - schneeberger-linear
+  - peer-bearings

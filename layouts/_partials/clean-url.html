@@ -1,0 +1,6 @@
+{{- /* Turns /about-us.html into /about-us and /index.html into / (same URLs as the old site) */ -}}
+{{- $u := strings.TrimSuffix ".html" . -}}
+{{- $u = strings.TrimSuffix "/index" $u -}}
+{{- if eq $u "" }}{{ $u = "/" }}{{ end -}}
+{{- if strings.HasSuffix $u ".com" }}{{ $u = printf "%s/" $u }}{{ end -}}
+{{- return $u -}}

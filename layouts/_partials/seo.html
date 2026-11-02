@@ -1,0 +1,39 @@
+{{- /* Returns dict: title, description, image, jsonld (slice of objects) for the current page */ -}}
+{{- $p := .Params -}}
+{{- $title := cond .IsHome .Title (printf "%s | %s" .Title site.Title) -}}
+{{- $desc := .Description | default $p.summary | default $p.description | default site.Params.description -}}
+{{- $img := "" -}}
+{{- $ld := slice -}}
+{{- $base := strings.TrimSuffix "/" site.BaseURL -}}
+{{- $url := partial "clean-url.html" .Permalink -}}
+{{- if eq .Section "product" -}}
+  {{- $cat := index site.Data.categories $p.cat | default dict -}}
+  {{- $sub := $p.subName -}}{{ range $cat.subcategories }}{{ if eq .slug $p.sub }}{{ $sub = .heading | default .name }}{{ end }}{{ end -}}
+  {{- $dims := partial "product-dims.html" $p -}}
+  {{- $parts := slice (printf "%s - %s" $p.brand $p.part) }}{{ with $sub }}{{ $parts = $parts | append . }}{{ end }}{{ with $dims }}{{ $parts = $parts | append . }}{{ end -}}
+  {{- $title = delimit $parts " | " -}}
+  {{- $d := slice (printf "%s %s %s." $p.brand $p.part ($sub | default $cat.name)) -}}
+  {{- with $dims }}{{ $d = $d | append (printf "Size %s." .) }}{{ end -}}
+  {{- with $p.bore }}{{ $d = $d | append (printf "Bore %s." (lower .)) }}{{ end -}}
+  {{- with $p.kg }}{{ $d = $d | append (printf "Weight %s kg." .) }}{{ end -}}
+  {{- $d = $d | append "Sourced to order, 7–9 day dispatch. Get a quote from VW Impex." -}}
+  {{- $desc = delimit $d " " | truncate 300 -}}
+  {{- $img = partial "product-img.html" $p -}}
+  {{- $prod := dict "@context" "https://schema.org" "@type" "Product" "name" (printf "%s %s" $p.brand $p.part) "sku" $p.part "mpn" $p.part
+        "brand" (dict "@type" "Brand" "name" $p.brand) "description" (($p.tech | default $p.desc | default $desc) | plainify | truncate 500) "category" ($sub | default $cat.name) "url" $url -}}
+  {{- with $img }}{{ $prod = merge $prod (dict "image" .) }}{{ end -}}
+  {{- with $p.price }}{{ $prod = merge $prod (dict "offers" (dict "@type" "Offer" "priceCurrency" "INR" "price" (string .) "availability" "https://schema.org/BackOrder" "url" $url)) }}{{ end -}}
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" (printf "%s/" $base)) (dict "@type" "ListItem" "position" 2 "name" $cat.name "item" (printf "%s/products/category/%s" $base $p.cat)) -}}
+  {{- if $p.sub }}{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 3 "name" $sub "item" (printf "%s/products/category/%s/%s" $base $p.cat $p.sub)) }}{{ end -}}
+  {{- $ld = $ld | append $prod (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) -}}
+{{- else if eq .Section "products" -}}
+  {{- $title = cond (eq $p.level "subcategory") (printf "%s – %s | %s" .Title $p.catName site.Title) (printf "%s | %s" .Title site.Title) -}}
+  {{- $desc = $p.summary | default (printf "%s from 277+ brands at VW Impex. Get a quote for any part number." .Title) -}}
+  {{- with $p.image }}{{ $img = partial "img-url.html" . }}{{ end -}}
+{{- else if eq .Section "brand" -}}
+  {{- $desc = $p.description | default (printf "Genuine %s products from VW Impex, delivered worldwide. Get a quote for any %s part number." .Title .Title) -}}
+  {{- with $p.logo }}{{ $img = partial "img-url.html" . }}{{ end -}}
+{{- else if .IsHome -}}
+  {{- $ld = $ld | append (dict "@context" "https://schema.org" "@type" "Organization" "name" "VW Impex" "url" (printf "%s/" $base) "logo" (site.Params.logo | absURL) "email" site.Params.email "telephone" site.Params.phone "sameAs" (apply site.Params.social "index" "." "url")) -}}
+{{- end -}}
+{{- return dict "title" $title "description" (trim (replaceRE `\s+` " " $desc) " ") "image" $img "jsonld" $ld -}}

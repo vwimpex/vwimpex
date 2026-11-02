@@ -1,0 +1,14 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Skate Bearings & Accessories
+slug: roller-and-inline-skates-accessories
+weight: 150
+icon: ball
+blurb: Bearings and accessories for roller and inline skates.
+description: Buy Skate Bearing all sizes for Quad and inline skates. Discover our unique collection of Skate Accessories and Spare.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291069272179.jpeg
+subcategories:
+- name: Skate Bearings And Accessories
+  slug: skate-bearings-and-accessories
+  heading: SKATE BEARINGS AND ACCESSORIES
+  description: Bearings come in a range of different options. From ABEC 1-9, skate rated, Swiss and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/

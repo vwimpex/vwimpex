@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+{{- $shop := site.Params.shopURL }}
+{{- $brands := sort (where site.RegularPages "Section" "brand") "Title" }}
+<section class="section section-tight">
+  <div class="container">
+    <div class="brand-tools card">
+      <label class="search-field">
+        {{ partial "icon.html" (dict "name" "search" "size" 20) }}
+        <span class="sr-only">Search brands</span>
+        <input type="search" placeholder="Search {{ len $brands }} brands, e.g. SKF, THK, Nilos" data-brand-search>
+      </label>
+      <div class="az" role="group" aria-label="Filter by first letter">
+        <button type="button" class="az-btn is-active" data-letter="all">All</button>
+        {{- $letters := slice }}
+        {{- range $brands }}{{ $l := upper (substr .Title 0 1) }}{{ if not (findRE "[A-Z]" $l) }}{{ $l = "#" }}{{ end }}{{ $letters = $letters | append $l }}{{ end }}
+        {{- range ($letters | uniq) }}<button type="button" class="az-btn" data-letter="{{ . }}">{{ . }}</button>{{ end }}
+      </div>
+    </div>
+
+    <p class="result-count" aria-live="polite"><span data-brand-count>{{ len $brands }}</span> brands</p>
+
+    <ul class="brand-grid" data-brand-grid>
+      {{- range $brands }}
+      {{- $l := upper (substr .Title 0 1) }}{{ if not (findRE "[A-Z]" $l) }}{{ $l = "#" }}{{ end }}
+      <li data-name="{{ lower .Title }}" data-letter="{{ $l }}">
+        <a class="brand-card" href="{{ partial "clean-url.html" .RelPermalink }}">
+          <span class="brand-initial">{{ substr .Title 0 2 }}</span>
+          <span class="brand-name">{{ .Title }}</span>
+          {{ partial "icon.html" (dict "name" "arrow" "size" 16) }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    <p class="empty-state" data-brand-empty hidden>No brand found. <a href="{{ "/getQuote" | relURL }}">Ask us anyway</a>, we source from 277+ manufacturers.</p>
+  </div>
+</section>
+{{ partial "cta.html" . }}
+{{ end }}

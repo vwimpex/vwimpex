@@ -1,0 +1,4 @@
+{{- /* Usage: partial "icon.html" (dict "name" "globe" "size" 20) — references the shared sprite (built in sprite.html) */ -}}
+{{- $size := .size | default 20 -}}
+{{- $sprite := partialCached "sprite.html" . "sprite" -}}
+<svg class="icon" width="{{ $size }}" height="{{ $size }}" aria-hidden="true"><use href="{{ $sprite }}#i-{{ .name }}"/></svg>

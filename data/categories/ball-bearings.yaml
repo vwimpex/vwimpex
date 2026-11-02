@@ -1,0 +1,218 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Ball Bearings
+slug: ball-bearings
+weight: 10
+icon: ball
+blurb: Deep groove, angular contact, spindle, ceramic and thin-section ball bearings.
+description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction and are optimized.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291044055651.jpeg
+subcategories:
+- name: Alwayse Ball Transfer Units
+  slug: alwayse-ball-transfer-units
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17442749284216.png
+- name: Angular Contact Ball Bearing Double Row INA
+  slug: angular-contact-ball-bearing-double-row-ina
+  heading: Angular Contact Ball bearing (Double Row)
+  description: INA Double Row Angular Contact ball bearings have raceways in the inner and outer rings that are.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291837789897.jpeg
+- name: Angular Contact Ball Bearing Single Row SKF
+  slug: angular-contact-ball-bearing-single-row-skf
+  heading: Angular Contact Ball bearing (Single Row)
+  description: Angular contact ball bearings have inner and outer ring raceways that are displaced relative to.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295307735312.jpeg
+- name: Angular Contact Ball Bearing Ballscrew
+  slug: angular-contact-ball-bearing-ballscrew
+  heading: Angular Contact Ball bearing BallScrew
+  description: Angular Contact Ball bearing BallScrew
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291834479755.jpeg
+- name: Angular Contact Ball Bearing Double Row
+  slug: angular-contact-ball-bearing-double-row
+  heading: Angular Contact Ball bearing Double Row
+  description: Double Row Angular Contact ball bearings have raceways in the inner and outer rings that are.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291836653583.jpeg
+- name: Angular Contact Ball Bearing Double Row Rolling Mill
+  slug: angular-contact-ball-bearing-double-row-rolling-mill
+  heading: Angular Contact Ball bearing Double Row Rolling Mill
+  description: Angular Contact ball bearings are used as thrust bearings for roll necks using four.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291838762978.png
+- name: Angular Contact Ball Bearing Single Row
+  slug: angular-contact-ball-bearing-single-row
+  heading: Angular Contact Ball bearing Single Row
+  description: Angular contact ball bearings have inner and outer ring raceways that are displaced relative to.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295306682768.jpeg
+- name: Angular Contact Ball Bearing Spindle SKF
+  slug: angular-contact-ball-bearing-spindle-skf
+  heading: Angular Contact Ball bearing Spindle
+  description: Angular Contact Ball bearings for main spindles stand for very high precision and absolute.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323537332660.png
+- name: Angular Contact Ball Bearing Double Row SKF
+  slug: angular-contact-ball-bearing-double-row-skf
+  heading: Angular Contact Ball Bearing-Double Row
+  description: Double Row Angular Contact ball bearings have raceways in the inner and outer rings that are.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291839669427.png
+- name: Angular Contact Ball Bearing NTN
+  slug: angular-contact-ball-bearing-ntn
+  heading: Angular Contact Ball Bearings
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295309837001.jpeg
+- name: Angular Contact Ball Bearings Spindle FAG
+  slug: angular-contact-ball-bearings-spindle-fag
+  heading: Angular Contact Ball Bearings - Spindle
+  description: Angular Contact Ball bearings for main spindles stand for very high precision and absolute.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295310712199.jpeg
+- name: Angular Contact Ball Bearings Multi Direction
+  slug: angular-contact-ball-bearings-multi-direction
+  description: Axial Angular Contact Ball Bearing carrying High load capacity, high rigidity, high preload.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295308928314.jpeg
+- name: Ball Transfer Units
+  slug: ball-transfer-units
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295314421830.jpeg
+- name: Ballscrew Bearing
+  slug: ballscrew-bearing
+  heading: BallScrew Bearing
+  description: BallScrew Bearing
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295315494997.jpeg
+- name: Ceramic Bearing
+  slug: ceramic-bearing
+  description: Full ceramic bearings have ceramic rings and balls, and either a synthetic cage made from PEEK or PTFE or no cage at all.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301309834469.jpeg
+- name: SKF Ball Bearing
+  slug: skf-ball-bearing-1
+  heading: DEEP GROOVE BALL BEARING
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304901816170.jpeg
+- name: Deep Groove Ball Bearing Single Row Timken
+  slug: deep-groove-ball-bearing-single-row-timken
+  heading: Deep Groove Ball Bearing (Single Row)
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301327836775.jpeg
+- name: Deep Groove Ball Bearing Double Row
+  slug: deep-groove-ball-bearing-double-row
+  description: Double-row ball bearings are suitable for medium radial loads and small axial loads in both directions.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301326796776.jpeg
+- name: Deep Grove Ball Bearing Single Row
+  slug: deep-grove-ball-bearing-single-row
+  heading: Deep grove Ball bearing Single Row
+  description: Single row deep groove ball bearings are the most widely used bearing type They are available capped.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17585196514495.png
+- name: Extended Inner Ring Ball Bearing
+  slug: extended-inner-ring-ball-bearing
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301361419764.jpeg
+- name: Flanged Ball Bearing
+  slug: flanged-ball-bearing
+  description: A flanged ball bearing is not truly a different type of bearing. Just as ball bearings are offered sealed or open.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323569576344.png
+- name: Flexible Ball Bearing
+  slug: flexible-ball-bearing
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17598166364560.png
+- name: Four Point Contact Ball Bearing
+  slug: four-point-contact-ball-bearing
+  heading: Four Point Contact Ball bearing
+  description: A four-point contact ball bearing makes it easy to simplify machine designs that have a combination of.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17733944418462.jpeg
+- name: High Temperature Ball Bearings
+  slug: high-temperature-ball-bearings-1
+  heading: High Temperature Ball Bearing
+  description: High temperature bearings and bearing units are designed to deliver increased reliability, reduced.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323525506339.png
+- name: Hybrid Bearing
+  slug: hybrid-bearing
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17533416454648.png
+- name: Bearing For Housings
+  slug: bearing-for-housings
+  heading: Insert Bearing For UC Or SB Series
+  description: Radial insert ball bearings have an inner and outer ring with a cage that holds a complement of.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301431585895.jpeg
+- name: Insulated Ball Bearing FAG
+  slug: insulated-ball-bearing-fag
+  heading: Insulated Bearing
+  description: Insulated bearing are designed to protect a bearing against electric current passage. By integrating the insulating.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17598166963469.png
+- name: Magneto Ball Bearing
+  slug: magneto-ball-bearing
+  description: 'Magneto Bearings: The inner groove of magneto bearings is a little shallower than that of deep groove bearings, the.'
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304765569201.jpeg
+- name: Mast Roller Bearing
+  slug: mast-roller-bearing
+  description: Mast bearings are found on fork lift trucks. They carry the forks (carriage) up the mast and they also enable the.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304773909419.jpeg
+- name: Miniature Bearings
+  slug: miniature-bearings
+  description: Ball bearings are machinery components, which comprise an outer ring, inner ring, balls, retainers, shields and snap.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304777174084.jpeg
+- name: Bearings For Housings
+  slug: bearings-for-housings-1
+  heading: Mounted Bearings for Housings
+  description: Mounted bearings and housings with rolling bearings support a rotating shaft, which can be bolted on a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304785287897.jpeg
+- name: Plastic Bearings
+  slug: plastic-bearings
+  description: Plastic ball bearings are cost-effective, self-lubricating and maintenance-free plastic ball bearings require no external.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323593747571.png
+- name: Plastic Bearings With Stainless Steel Balls
+  slug: plastic-bearings-with-stainless-steel-balls
+  heading: Plastic Bearings with Stainless Steel Balls
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17533432825301.png
+- name: Precision Rolling Bearings
+  slug: precision-rolling-bearings
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17456579668722.png
+- name: PU Coated Bearing
+  slug: pu-coated-bearing
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16615924233463.jpeg
+- name: Self Align Ball Bearing Double Row
+  slug: self-align-ball-bearing-double-row
+  heading: Self Align Ball Bearings
+  description: Self-aligning ball bearings have two rows of balls, a common sphered raceway in the outer ring and two deep.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/
+- name: Self Align Ball Bearings SKF
+  slug: self-align-ball-bearings-skf
+  heading: Self-Align Ball Bearings
+  description: Self-aligning ball bearings have two rows of balls, a common sphered raceway in the outer ring and two deep.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304862965866.jpeg
+- name: Self Aligning Solid Oil Filled Ball Bearing
+  slug: self-aligning-solid-oil-filled-ball-bearing
+  heading: Self-Aligning Solid-Oil Filled Ball Bearing
+  description: Bearings with Solid Oil are designed for use in applications where high levels of moisture and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17163724454577.png
+- name: Silicon Nitride Ceramic Bearings SI3N4
+  slug: silicon-nitride-ceramic-bearings-si3n4
+  heading: Silicon Nitride Ceramic Bearings Si3N4
+  description: Si3N4, or silicon nitride, is a very hard but lightweight ceramic material. Si3N4 has excellent.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304865487925.jpeg
+- name: Aerospace Bearings
+  slug: aerospace-bearings
+  heading: SPECIAL BEARING
+  description: Special Bearings means Inch Size Ball Bearings, Ceramic Ball Bearing , High Temperature Ball Bearing , Plastic Ball Bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304908577065.jpeg
+- name: Stainless Steel Ball Bearings
+  slug: stainless-steel-ball-bearings
+  description: Stainless steel ball bearings have much greater corrosion resistance than those made of SAE 52100 bearing.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304925148303.jpeg
+- name: Thin Section Ball Bearings
+  slug: thin-section-ball-bearings
+  heading: THIN SECTION BALL BEARINGS
+  description: Thin section bearings are a family of bearings designed from a limited number of widths and thicknesses (cross.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17367669292522.png
+- name: Thin Section Bearings RBC
+  slug: thin-section-bearings-rbc
+  heading: Thin Section Bearings
+  description: Thin section bearings are a family of bearings designed from a limited number of widths and thicknesses (cross.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17232017322613.png
+- name: Thin Section Bearings
+  slug: thin-section-bearings
+  heading: Thin Section Bearings (cross sections)
+  description: Thin section bearings are a family of bearings designed from a limited number of widths and.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304939636469.jpeg
+- name: Wire Ball Bearing
+  slug: wire-ball-bearing
+  heading: WIRE BALL BEARING
+  description: Deep groove ball bearings are the most widely used bearing type and are particularly versatile. They have low friction.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17367684726814.png

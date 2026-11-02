@@ -1,0 +1,72 @@
+# Edited in the CMS (Catalog → Categories). slug = URL /products/category/<slug> – don't change it for existing categories.
+name: Housings
+slug: housings
+weight: 40
+icon: box
+blurb: Pillow blocks, mounted units, adapter sleeves and housing accessories.
+description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house monitoring equipment.
+image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291052113020.jpeg
+subcategories:
+- name: Adapter Withdrawal Sleeve
+  slug: adapter-withdrawal-sleeve
+  heading: Withdrawal Sleeve
+  description: Withdrawal sleeves can be used to mount bearings with a tapered bore onto the cylindrical seat of stepped shafts The.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16291025562416.jpeg
+- name: Bushing
+  slug: bushing-1
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house monitoring.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16334331071938.jpeg
+- name: Carriage Bearing Housings
+  slug: carriage-bearing-housings
+  heading: CARRIAGE BEARING HOUSINGS
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17218888425216.png
+- name: Solid Ceramic Pillow Block
+  slug: solid-ceramic-pillow-block
+  heading: Ceramic Pillow Block
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17533426679644.png
+- name: Heavy Duty Bearing
+  slug: heavy-duty-bearing
+  heading: HEAVY DUTY BEARING
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301412382833.png
+- name: Housing Accessories
+  slug: housing-accessories
+  description: Bearing housing seals for dusty environments are traditionally labyrinth or contact type The labyrinth-type requires a.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301415414480.png
+- name: Insert Bearing With Housing Sealmaster
+  slug: insert-bearing-with-housing-sealmaster
+  heading: Insert Bearing & Housing
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17193938614748.png
+- name: Housing And Bearing
+  slug: housing-and-bearing
+  heading: Insert bearing with housing
+  description: An insert bearing with housing is a bearing unit that combines rolling bearing with bearing housing. Most of the.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16301432542454.png
+- name: Lock Washers
+  slug: lock-washers
+  description: Sleeve Lock Washers, locking clips and locking plates are simple, stable and reliable fastening elements which engage a keyway in.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304763794488.jpeg
+- name: Miniature Housing Unit
+  slug: miniature-housing-unit
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also house.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17323586272848.png
+- name: Peer Mounted Ball Bearing Units
+  slug: peer-mounted-ball-bearing-units
+  heading: Mounted Ball Bearing Units
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17418651848433.png
+- name: Mounted Spherical Bearing Units
+  slug: mounted-spherical-bearing-units
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17377956315043.jpeg
+- name: Stainless Steel Pillow Blocks
+  slug: stainless-steel-pillow-blocks
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can also.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_17528384121618.png
+- name: Thermoplastic Bearing Mounting Units
+  slug: thermoplastic-bearing-mounting-units
+  description: Bearing housings support your bearings, protect them from contaminants while keeping in lubricant, and can.
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16304935639146.jpeg

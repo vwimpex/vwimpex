@@ -1,0 +1,6 @@
+{{- /* normalized brand name → brand page URL (cached once per build) */ -}}
+{{- $m := dict -}}
+{{- range where site.RegularPages "Section" "brand" -}}
+  {{- $m = merge $m (dict (lower (replaceRE `[^A-Za-z0-9]` "" .Title)) (partial "clean-url.html" .RelPermalink)) -}}
+{{- end -}}
+{{- return $m -}}

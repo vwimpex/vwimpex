@@ -1,0 +1,33 @@
+{{- /*
+  Generates every category + sub-category page with the SAME URLs as the old site:
+    /products/category/<category>
+    /products/category/<category>/<sub-category>
+  Editable source: data/categories/<slug>.yaml (CMS → Catalog → Categories)
+  Extra crawled data (old "featured" products): data/catalog/categories.json
+*/ -}}
+{{- $crawl := site.Data.catalog.categories | default dict }}
+{{- range $cat := sort site.Data.categories "weight" }}
+  {{- $p := printf "/products/category/%s" $cat.slug }}
+  {{- $c := index $crawl $p | default dict }}
+  {{- $subs := slice }}
+  {{- range $cat.subcategories }}{{ $subs = $subs | append (dict "name" .name "slug" .slug) }}{{ end }}
+  {{- $.AddPage (dict
+      "kind" "page"
+      "path" (printf "category/%s" $cat.slug)
+      "title" $cat.name
+      "params" (dict "level" "category" "catSlug" $cat.slug "catName" $cat.name "icon" $cat.icon
+                     "summary" ($cat.description | default $cat.blurb) "image" $cat.image
+                     "products" ($c.products | default slice) "subcategories" $subs)
+  ) }}
+  {{- range $sub := $cat.subcategories }}
+    {{- $s := index $crawl (printf "%s/%s" $p $sub.slug) | default dict }}
+    {{- $.AddPage (dict
+        "kind" "page"
+        "path" (printf "category/%s/%s" $cat.slug $sub.slug)
+        "title" ($sub.heading | default $sub.name)
+        "params" (dict "level" "subcategory" "catSlug" $cat.slug "catName" $cat.name "subSlug" $sub.slug "icon" $cat.icon
+                       "summary" ($sub.description | default "") "image" ($sub.image | default "")
+                       "products" ($s.products | default slice) "subcategories" $subs)
+    ) }}
+  {{- end }}
+{{- end }}
