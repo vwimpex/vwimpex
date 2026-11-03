@@ -358,6 +358,7 @@
 <url><loc>http://localhost:1313/brand/peer-bearings/</loc></url>
 <url><loc>http://localhost:1313/brand/permaglide-bushings/</loc></url>
 <url><loc>http://localhost:1313/brand/pfi/</loc></url>
+<url><loc>http://localhost:1313/products/category/special-bearings/bushing-skf/</loc></url>
 <url><loc>http://localhost:1313/products/category/gearbox/planetarygearbox/</loc></url>
 <url><loc>http://localhost:1313/products/category/ball-bearings/plastic-bearings/</loc></url>
 <url><loc>http://localhost:1313/products/category/ball-bearings/plastic-bearings-with-stainless-steel-balls/</loc></url>
@@ -418,7 +419,6 @@
 <url><loc>http://localhost:1313/products/category/sealssnap-rings/nilos-ring-jv/</loc></url>
 <url><loc>http://localhost:1313/brand/sealmaster-bearing-units/</loc></url>
 <url><loc>http://localhost:1313/products/category/sealssnap-rings/</loc></url>
-<url><loc>http://localhost:1313/search/</loc></url>
 <url><loc>http://localhost:1313/products/category/thrust-bearings/seating-washer-for-thrust-bearing/</loc></url>
 <url><loc>http://localhost:1313/brand/seeger/</loc></url>
 <url><loc>http://localhost:1313/products/category/ball-bearings/self-align-ball-bearing-double-row/</loc></url>

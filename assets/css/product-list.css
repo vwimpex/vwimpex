@@ -1,0 +1,18 @@
+/* Sidebar filters on sub-category pages (like the old site): Dimensions + Brands */
+.pf, .cat-sidebar .pf { padding: 0; overflow: hidden; }
+.pf-group { border-bottom: 1px solid var(--line); }
+.pf-group summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; font-weight: 600; background: var(--bg-soft, #f4f7f9); }
+.pf-group summary::-webkit-details-marker { display: none; }
+.pf-group summary::after { content: ''; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-135deg); margin-top: 4px; transition: transform .2s; }
+.pf-group:not([open]) summary::after { transform: rotate(45deg); margin-top: -4px; }
+.pf-group > select, .pf-group > input { display: block; width: calc(100% - 36px); margin: 12px 18px 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: .95rem; background: #fff; }
+.pf-group > :last-child { margin-bottom: 14px; }
+.pf-brands { list-style: none; margin: 10px 0 0; padding: 0 18px; max-height: 320px; overflow: auto; }
+.pf-brands li { padding: 4px 0; }
+.pf-brands label { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: .95rem; }
+.pf-brands input { width: 18px; height: 18px; accent-color: var(--primary); flex-shrink: 0; }
+.pf-brands small { color: var(--muted); margin-left: auto; }
+.pf-more { background: none; border: 0; padding: 6px 18px 0; color: var(--primary); font: inherit; font-weight: 600; cursor: pointer; }
+.pf-actions { display: flex; gap: 10px; padding: 16px 18px; }
+.pf .btn-accent { background: var(--accent, #d71f3a); color: #fff; }
+.pf .btn-accent:hover { filter: brightness(.92); color: #fff; }

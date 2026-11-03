@@ -33,6 +33,8 @@
   var m = location.pathname.match(/^\/product\/([^\/]+?)(?:\.html)?\/?$/);
   if (!m) return;
   var slug = decodeURIComponent(m[1]), nf = document.getElementById('nf'), show404 = function () { nf.hidden = false; };
+  var REDIR = {{ site.Data.catalog.redirects | default dict | jsonify | safeJS }};
+  if (REDIR[slug]) { location.replace({{ "/product/" | relURL }} + REDIR[slug]); return; }
   nf.hidden = true;
   var CATS = {{ $cats | jsonify | safeJS }}, BRANDS = {{ partialCached "brand-map.html" . "brands" | jsonify | safeJS }};
   var CDN = {{ site.Params.imageCDN }}, EMAIL = {{ site.Params.email }}, SPRITE = {{ partialCached "sprite.html" . "sprite" }};

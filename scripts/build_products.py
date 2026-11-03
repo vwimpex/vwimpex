@@ -20,9 +20,16 @@ for c in cats:
 catmap.update({norm('Seals/Snap Rings'): 'sealssnap-rings', norm('Roller and Inline Skates Accessories'): 'roller-and-inline-skates-accessories'})
 # Old-site slugs: data/catalog/product-slugs.json = [[slug, "cat/sub", brand, part, img], ...]
 # (made once from the storefront crawl by scripts/slugs_from_crawl.py)
+# data/catalog/redirects.json {old slug: target slug}: URLs the old site redirected (duplicates) – no page, only a redirect
+redirects = json.load(open(site + '/data/catalog/redirects.json')) if os.path.exists(site + '/data/catalog/redirects.json') else {}
+# data/catalog/old-site-extra.json: products live on the old site (in its sitemap) but not in its category/brand lists
+#   ids: {admin serial no.: old slug}, manual: full records of products missing from the admin export
+extra = json.load(open(site + '/data/catalog/old-site-extra.json')) if os.path.exists(site + '/data/catalog/old-site-extra.json') else {}
+extra_ids = {int(k): v for k, v in extra.get('ids', {}).items()}
 real = {}; crawl_titles = {}
 if crawl_path:
     for slug, key, brand, part, img in json.load(open(crawl_path)):
+        if slug in redirects: continue
         cat, _, sub = key.partition('/')
         crawl_titles[slug] = f"{brand} - {part}"
         real.setdefault((norm(brand), norm(part), cat), []).append((slug, sub, img))
@@ -33,8 +40,9 @@ include_hidden = '--include-hidden' in sys.argv
 out = collections.defaultdict(list); stats = collections.Counter(); used = set()
 rows = [r for r in csv.DictReader(open(exp, encoding='utf-8'))]
 
-def record(r, cat, slug, sub, img):
+def record(r, cat, slug, sub, img, unlisted=False):
     brand, part = r['BRAND'].strip(), r['PART NO'].strip()
+    part = part.replace('\\n', 'N').replace('\\"', '"').replace("\\'", "'")   # export escapes: SS-SBLF202\\n → SS-SBLF202N, 1/4\\" → 1/4"
     def dim(v, u):
         v = num(re.sub(r'^(\d+),(\d+)$', r'\1.\2', (v or '').strip()))   # "673,1" → "673.1"
         return f"{v} {u.strip().lower() or 'mm'}" if v else ''
@@ -45,6 +53,7 @@ def record(r, cat, slug, sub, img):
          'kg': num(r['WEIGHT']), 'cage': clean(r['CAGE']), 'seal': clean(r['SEAL']), 'bore': clean(r['BORE']),
          'lub': clean(r['LUBRICATION']), 'moq': num(r['MINIMUM ORDER QTY']), 'hsn': r['HSN CODE'].strip(),
          'price': num(r['MRP'].strip()), 'pdf': r['PDF Link'].strip() if r['PDF Link'].strip() not in ('', 'N/A') else '', 'img': img}
+    if unlisted: p['unlisted'] = True   # page + sitemap + search, but not in category/brand lists (like the old site)
     out[cat].append({k: v for k, v in p.items() if v not in ('', None)})
 
 # index of old-site slugs by (brand, part) for the category-independent fallback
@@ -68,6 +77,10 @@ for r, cat, subs in pending:   # pass 2: brand + part in any category, then prod
     if cand:
         slug, sub, img, ccat = cand[0]; used.add(slug); stats['slug_from_old_site_fallback'] += 1
         record(r, ccat, slug, sub, img); continue
+    sid = int(r['SERIAL NO.'])
+    if sid in extra_ids and extra_ids[sid] not in used:
+        used.add(extra_ids[sid]); stats['old_site_unlisted'] += 1
+        record(r, cat, extra_ids[sid], sorted(subs)[0] if len(subs) == 1 else '', '', unlisted=True); continue
     # products whose sub-category is not in the old site menu but which DO have pages there (checked via site search)
     orphan = (cat, norm(r['SUB CATEGORY'])) in {('housings', 'locknut'), ('special-bearings', 'ballscrew')}
     if real and not orphan and not include_hidden:
@@ -76,6 +89,9 @@ for r, cat, subs in pending:   # pass 2: brand + part in any category, then prod
     if slug in used: slug = f"{slug}-{r['SERIAL NO.'].strip()}"; stats['slug_dup_fixed'] += 1
     used.add(slug); stats['slug_derived'] += 1
     record(r, cat, slug, sorted(subs)[0] if len(subs) == 1 else '', '')
+for m in extra.get('manual', []):
+    if m['slug'] not in used and (not only or m['cat'] == only):
+        used.add(m['slug']); out[m['cat']].append(m); stats['old_site_unlisted_manual'] += 1
 # old-site URLs with no export row left: keep them as basic pages so no old URL breaks
 for (b, pn, cat), lst in real.items():
     for slug, sub, img in lst:
@@ -105,7 +121,8 @@ if not only:
 # Card row for product lists (same format as the Hugo sub-category lists, + fallback image + sub-category title):
 # slug, brand, part, type, dims, specs, own image, price, fallback image, sub-category
 CDN = 'https://d6qdphvz7to5l.cloudfront.net'
-_subimg = {(c['slug'], s_['slug']): (s_.get('image') or c.get('image') or '', s_.get('heading') or s_['name']) for c in cats for s_ in c['subcategories']}
+_ok = lambda u: u if u and not u.endswith('/') else ''   # an image path without a file name counts as no image
+_subimg = {(c['slug'], s_['slug']): (_ok(s_.get('image')) or _ok(c.get('image')) or '', s_.get('heading') or s_['name']) for c in cats for s_ in c['subcategories']}
 def _url(u): return u if (not u or u.startswith('http') or u.startswith('/images/')) else CDN + u
 def _t(v): return ' '.join(w.capitalize() for w in str(v).lower().split())
 def dims_text(p):
@@ -136,7 +153,7 @@ if not only:
     for items in out.values():
         for p in items:
             b = bmap.get(norm(p.get('brand')))
-            if b: lists[b].append(card_row(p))
+            if b and not p.get('unlisted'): lists[b].append(card_row(p))
     shutil.rmtree(site + '/static/data/brand', ignore_errors=True); os.makedirs(site + '/static/data/brand')
     for b, rows in lists.items():
         json.dump(rows, open(f"{site}/static/data/brand/{b}.json", 'w'), ensure_ascii=False, separators=(',', ':'))
@@ -176,4 +193,13 @@ if not only:
     json.dump({'split': split, 'brands': brands_meta, 'categories': cats_meta}, open(site + '/static/search/meta.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     stats['search_files'] = len(os.listdir(site + '/static/search'))
 
+# Netlify: 301 redirects for data/catalog/redirects.json, kept between two marker lines in static/_redirects
+if not only and os.path.exists(site + '/static/_redirects'):
+    START, END = '# BEGIN product redirects (scripts/build_products.py)', '# END product redirects'
+    txt = open(site + '/static/_redirects').read()
+    if START in txt: txt = txt[:txt.index(START)] + txt[txt.index(END) + len(END) + 1:]
+    block = START + '\n' + ''.join(f'/product/{a} /product/{b} 301!\n' for a, b in sorted(redirects.items())) + END + '\n'
+    i = txt.index('# Old per-product quote URLs')   # before the catch-all rewrite rules
+    open(site + '/static/_redirects', 'w').write(txt[:i] + block + '\n' + txt[i:])
+    stats['redirects'] = len(redirects)
 print(dict(stats), {k: len(v) for k, v in out.items()})

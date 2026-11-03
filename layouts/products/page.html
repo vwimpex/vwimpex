@@ -38,6 +38,28 @@
           {{- end }}
         </ul>
       </div>
+      {{- if and $isSub $items }}
+      {{- /* Filters like the old site: dimensions (MM / INCH) + brand checkboxes. Used by assets/js/product-list.js */}}
+      <form class="card pf" data-pf-form autocomplete="off">
+        <details class="pf-group" open>
+          <summary>Dimensions</summary>
+          <select data-pf-unit aria-label="Units"><option value="MM">Units: MM</option><option value="INCH">Units: INCH</option></select>
+          <input type="text" inputmode="decimal" placeholder="Inner (d)" data-pf-dim="10" aria-label="Inner diameter">
+          <input type="text" inputmode="decimal" placeholder="Outer (D)" data-pf-dim="11" aria-label="Outer diameter">
+          <input type="text" inputmode="decimal" placeholder="Width (B)" data-pf-dim="12" aria-label="Width">
+        </details>
+        <details class="pf-group" open>
+          <summary>Brands</summary>
+          <input type="search" placeholder="Find a brand" data-pf-bsearch aria-label="Find a brand" hidden>
+          <ul class="pf-brands" data-pf-brands></ul>
+          <button type="button" class="pf-more" data-pf-more hidden>+ More</button>
+        </details>
+        <div class="pf-actions">
+          <button type="submit" class="btn btn-accent btn-sm">Filter</button>
+          <button type="reset" class="btn btn-ghost btn-sm" data-pf-clear>Clear</button>
+        </div>
+      </form>
+      {{- end }}
       <div class="card sidebar-cta">
         <h3>Need a different size?</h3>
         <p class="muted">Send the part number or dimensions and we'll source it.</p>
@@ -64,15 +86,14 @@
       {{- range $items }}
         {{- $specs := partial "product-specs.html" . }}
         {{- $img := "" }}{{ with .img }}{{ $img = partial "img-url.html" . }}{{ end }}
-        {{- $rows = $rows | append (printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" .slug .brand .part (.desc | default "" | plainify | truncate 90) (partial "product-dims.html" .) (delimit $specs "|") $img (.price | default "")) }}
+        {{- $rows = $rows | append (printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\t\t%s\t%s\t%s" .slug .brand .part (.desc | default "" | plainify | truncate 90) (partial "product-dims.html" .) (delimit $specs "|") $img (.price | default "") (partial "dim-mm.html" .di) (partial "dim-mm.html" .do) (partial "dim-mm.html" .w)) }}
       {{- end }}
       {{- $json := resources.FromString (printf "data/list/%s/%s.json" .Params.catSlug .Params.subSlug) ($rows | jsonify) }}
       {{- $defImg := "" }}{{ with .Params.image }}{{ $defImg = partial "img-url.html" . }}{{ end }}
-      <div class="product-browser" data-product-browser data-src="{{ $json.RelPermalink }}" data-quote="{{ "/getQuote" | relURL }}" data-img="{{ $defImg }}" data-sub="{{ .Title }}">
+      <div class="product-browser" data-product-list data-src="{{ $json.RelPermalink }}" data-quote="{{ "/getQuote" | relURL }}" data-img="{{ $defImg }}" data-sub="{{ .Title }}">
         <div class="list-head"><h2 class="block-title">All {{ .Title }} <span class="muted">(<span data-count>{{ lang.FormatNumber 0 $count }}</span>)</span></h2></div>
         <div class="browser-tools">
           <label class="search-field">{{ partial "icon.html" (dict "name" "search" "size" 18) }}<span class="sr-only">Search part number</span><input type="search" placeholder="Search part number, brand or size (e.g. 6205, SKF, 25×52)" data-q></label>
-          <select data-brand aria-label="Filter by brand"><option value="">All brands</option></select>
         </div>
         <div class="pcard-list" data-list>
           {{- /* First 12 rendered in HTML for search engines / no-JS; JS replaces them */}}
@@ -92,4 +113,8 @@
   </div>
 </section>
 {{ partial "cta.html" . }}
+{{- if and $isSub $items }}
+{{- $pcss := resources.Get "css/product-list.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $pcss.RelPermalink }}">
+{{- $pjs := resources.Get "js/product-list.js" | js.Build (dict "minify" hugo.IsProduction) | fingerprint }}<script src="{{ $pjs.RelPermalink }}" defer></script>
+{{- end }}
 {{ end }}

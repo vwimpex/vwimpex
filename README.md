@@ -80,6 +80,12 @@ python3 scripts/build_products.py products_export.csv . data/catalog/product-slu
 ```
 Writes: `data/products/*.json`, `static/sitemaps/`, `static/search/`, `static/data/brand/`, `data/brandcounts.json`.
 
+### Old-site extras and redirects
+- `data/catalog/old-site-extra.json`: 5,214 products that are live on the old site and in its sitemap but not in its category/brand lists.
+  They get a page, sitemap entry and search entry, but are not shown in category/brand lists (field `unlisted: true`, same as the old site).
+- `data/catalog/redirects.json`: 336 old URLs that the old site redirected to another product (duplicates, e.g. `…-1` → `…`).
+  No page is built for them. Netlify: 301 rules in `static/_redirects` (written by `build_products.py`); other hosts: Hugo alias redirect pages; locally: the 404 page redirects.
+
 ## 5. URLs (same as the old site)
 | Page | URL | Source |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
        sitemap-pages.xml          all pages built by Hugo (incl. products added in the CMS)
        sitemaps/products-N.xml    bulk products, written by scripts/build_products.py (45k URLs per file) */ -}}
 {{- $pages := slice -}}
-{{- range .Pages }}{{ if and (or (ne .Section "product") (and .File (strings.HasSuffix .File.Filename ".md"))) (ne .File.BaseFileName "thank-you") (not .Draft) }}{{ $pages = $pages | append (partial "clean-url.html" .Permalink) }}{{ end }}{{ end -}}
+{{- range .Pages }}{{ if and (or (ne .Section "product") (and .File (strings.HasSuffix .File.Filename ".md"))) (not (in (slice "thank-you" "search") .File.BaseFileName)) (not .Draft) }}{{ $pages = $pages | append (partial "clean-url.html" .Permalink) }}{{ end }}{{ end -}}
 {{- $xml := printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n%s</urlset>\n" (delimit (apply $pages "printf" "<url><loc>%s</loc></url>\n" ".") "") -}}
 {{- $r := resources.FromString "sitemap-pages.xml" $xml -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}

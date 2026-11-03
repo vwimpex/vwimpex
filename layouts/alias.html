@@ -1,0 +1,13 @@
+{{- /* Redirect page for old URLs (Hugo aliases, e.g. duplicate products the old site redirected). Points to the clean URL. */ -}}
+{{- $u := partial "clean-url.html" .Permalink -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ $u }}</title>
+<link rel="canonical" href="{{ $u }}">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ $u }}">
+</head>
+<body><a href="{{ $u }}">{{ $u }}</a></body>
+</html>

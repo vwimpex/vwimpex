@@ -1,10 +1,11 @@
 {{- /* All products of a category (and optional sub-category): data/products/<cat>.json + CMS products,
-       CMS entries replace data entries with the same slug. Usage: partial "products-in.html" (dict "cat" "x" "sub" "y") */ -}}
+       CMS entries replace data entries with the same slug.
+       Products marked "unlisted" (live on the old site but not in its lists) are left out, like on the old site. Usage: partial "products-in.html" (dict "cat" "x" "sub" "y") */ -}}
 {{- $cms := partialCached "cms-products.html" . "cms" -}}
 {{- $all := index site.Data.products .cat | default slice -}}
 {{- if .sub }}{{ $all = where $all "sub" .sub }}{{ end -}}
 {{- $out := slice -}}
-{{- range $all }}{{ if not (index $cms .slug) }}{{ $out = $out | append . }}{{ end }}{{ end -}}
+{{- range $all }}{{ if and (not .unlisted) (not (index $cms .slug)) }}{{ $out = $out | append . }}{{ end }}{{ end -}}
 {{- range $slug, $p := $cms -}}
   {{- if and (eq $p.cat $.cat) (or (not $.sub) (eq $p.sub $.sub)) }}{{ $out = $out | append $p }}{{ end -}}
 {{- end -}}

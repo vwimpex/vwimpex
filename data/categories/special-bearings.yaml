@@ -31,6 +31,11 @@ subcategories:
   heading: Bushings and Plain Bearings
   description: Bushings (also referred to as plain bearings, plane bearings, sleeve bearings or linear sleeve bushings).
   image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295323713015.jpeg
+- name: Bushing SKF
+  slug: bushing-skf
+  heading: Plain and Bushings Bearings
+  description: Bushings (also referred to as plain bearings, plane bearings, sleeve bearings or linear sleeve bushings).
+  image: https://d6qdphvz7to5l.cloudfront.net/category_images/vwimpex_16295323713015.jpeg
 - name: Cage Assemblies Axial Bearing Washers
   slug: cage-assemblies-axial-bearing-washers
   heading: Cage Assemblies & Axial Bearing Washers
@@ -114,7 +119,7 @@ subcategories:
 - name: Lazy Susan
   slug: lazy-susan
   heading: LAZY SUSAN
-  image: https://d6qdphvz7to5l.cloudfront.net/category_images/
+  image: ''
 - name: Osborn Load Runners
   slug: osborn-load-runners
   heading: LOAD RUNNERS

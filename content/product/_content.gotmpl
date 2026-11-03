@@ -11,6 +11,10 @@
 {{- range os.ReadDir "content/product" }}{{ if strings.HasSuffix .Name ".md" }}{{ $cmsSlugs = merge $cmsSlugs (dict (strings.TrimSuffix ".md" .Name) true) }}{{ end }}{{ end }}
 {{- $catName := dict }}{{ $subName := dict }}
 {{- range site.Data.categories }}{{ $catName = merge $catName (dict .slug .name) }}{{ $c := .slug }}{{ range .subcategories }}{{ $subName = merge $subName (dict (printf "%s/%s" $c .slug) (.heading | default .name)) }}{{ end }}{{ end }}
+{{- /* data/catalog/redirects.json {old slug: target slug}: old-site URLs that redirected to another product.
+       They get no page; the target page gets an alias (redirect page) at the old URL. Netlify: static/_redirects (301). */}}
+{{- $aliases := dict }}
+{{- range $from, $to := site.Data.catalog.redirects }}{{ $aliases = merge $aliases (dict $to ((index $aliases $to | default slice) | append (printf "/product/%s" $from))) }}{{ end }}
 {{- $sel := getenv "HUGO_PRODUCTS" | default "sample" }}
 {{- range $cat, $all := site.Data.products }}
   {{- $items := slice }}
@@ -40,6 +44,7 @@
         "kind" "page"
         "path" .slug
         "title" (printf "%s - %s" .brand .part)
+        "aliases" (index $aliases .slug | default slice)
         "params" (merge . (dict "catName" (index $catName $cat) "subTitle" (index $subName (printf "%s/%s" $cat (.sub | default "")) | default .subName)))
     ) }}
     {{- end }}
