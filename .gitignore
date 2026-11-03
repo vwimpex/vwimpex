@@ -1,0 +1,8 @@
+public/
+resources/
+.hugo_build.lock
+hugo_stats.json
+node_modules/
+exports/
+products_export.csv
+static/pdata/

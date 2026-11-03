@@ -6,7 +6,7 @@
 # The test site is noindex so Google never sees it.
 # ---------------------------------------------------------------------------
 [build]
-  command = "hugo --gc --minify -b \"${DEPLOY_PRIME_URL:-$URL}/\""
+  command = "python3 scripts/build_pdata.py . && hugo --gc --minify -b \"${DEPLOY_PRIME_URL:-$URL}/\""
   publish = "public"
 
 [build.environment]

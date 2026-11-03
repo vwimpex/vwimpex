@@ -15,4 +15,5 @@ for c in "${CHUNKS[@]}"; do
   echo "== products: $c"
   HUGO_PRODUCTS="$c" $HUGO --disableKinds sitemap,robotstxt,404
 done
+rm -rf public/pdata   # every product has its own page here
 echo "Pages: $(find public -name '*.html' | wc -l)"

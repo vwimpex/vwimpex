@@ -24,6 +24,8 @@ sys.stderr.write(f"'{arg}' is not a product slug or category in data/products/\n
 PY
 )"
 fi
+# product data for products not built locally (shown by the 404 page)
+[[ -d static/pdata && -z "$(find data/products -name "*.json" -newer static/pdata | head -1)" ]] || python3 scripts/build_pdata.py .
 PORT="${PORT:-1313}"
 echo "HUGO_PRODUCTS=$PRODUCTS"
 [[ -n "$ARG" && "$PRODUCTS" == *@* ]] && echo "Open: http://localhost:$PORT/product/$(basename "$ARG")"

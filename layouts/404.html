@@ -1,5 +1,8 @@
 {{ define "main" }}
-<section class="section auth">
+{{- /* Products whose page was not built (local sample, Netlify test build) are shown here from static/pdata (scripts/build_pdata.py) */}}
+<style>#nf[hidden], #pv-root[hidden], #pv-root [hidden] { display: none !important; }</style>
+<div id="pv-root" hidden></div>
+<section class="section auth" id="nf">
   <div class="container text-center">
     <p class="eyebrow">Error 404</p>
     <h1>This page has rolled away</h1>
@@ -7,17 +10,11 @@
     {{- if hugo.IsServer }}
     <div class="card dev-note">
       <strong>Local development note</strong>
-      <p class="muted">The local server builds only {{ with getenv "HUGO_PRODUCTS" }}<code>HUGO_PRODUCTS={{ . }}</code>{{ else }}the first 50 products per category{{ end }}.
-      Stop it (Ctrl+C) and run this in the project folder:</p>
-      <p><code data-dev-cmd>./dev.sh</code> <button type="button" class="btn btn-ghost btn-sm" data-copy>Copy</button></p>
-      <p class="muted small">All products at once: <code>./build.sh &amp;&amp; npx serve@14 public</code></p>
+      <p class="muted">Product not found in <code>static/pdata</code>. Run once in the project folder (or just use <code>./dev.sh</code>, it does this automatically):</p>
+      <p><code data-dev-cmd>python3 scripts/build_pdata.py</code> <button type="button" class="btn btn-ghost btn-sm" data-copy>Copy</button></p>
     </div>
     <script>
-      (function () {
-        var m = location.pathname.match(/^\/product\/([^\/]+)/), el = document.querySelector('[data-dev-cmd]');
-        if (m) el.textContent = './dev.sh ' + m[1];
-        document.querySelector('[data-copy]').onclick = function () { navigator.clipboard && navigator.clipboard.writeText(el.textContent); this.textContent = 'Copied'; };
-      })();
+      document.querySelector('[data-copy]').onclick = function () { var c = document.querySelector('[data-dev-cmd]').textContent; navigator.clipboard && navigator.clipboard.writeText(c); this.textContent = 'Copied'; };
     </script>
     {{- end }}
     <div class="hero-actions hero-actions-center">
@@ -26,4 +23,77 @@
     </div>
   </div>
 </section>
+{{- $cats := dict }}
+{{- range site.Data.categories }}
+  {{- $subs := dict }}{{ range .subcategories }}{{ $subs = merge $subs (dict .slug (dict "t" (.heading | default .name) "i" (.image | default ""))) }}{{ end }}
+  {{- $cats = merge $cats (dict .slug (dict "n" .name "i" (.image | default "") "s" $subs)) }}
+{{- end }}
+<script>
+(function () {
+  var m = location.pathname.match(/^\/product\/([^\/]+?)(?:\.html)?\/?$/);
+  if (!m) return;
+  var slug = decodeURIComponent(m[1]), nf = document.getElementById('nf'), show404 = function () { nf.hidden = false; };
+  nf.hidden = true;
+  var CATS = {{ $cats | jsonify | safeJS }}, BRANDS = {{ partialCached "brand-map.html" . "brands" | jsonify | safeJS }};
+  var CDN = {{ site.Params.imageCDN }}, EMAIL = {{ site.Params.email }}, SPRITE = {{ partialCached "sprite.html" . "sprite" }};
+  var h = 0x811c9dc5;
+  new TextEncoder().encode(slug).forEach(function (b) { h = Math.imul(h ^ b, 0x01000193) >>> 0; });
+  var shard = ('00' + (h % 4096).toString(16)).slice(-3);
+  fetch({{ "/pdata/" | relURL }} + shard + '.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (all) {
+    var p = all[slug]; if (!p) return show404();
+    var e = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var ok = function (u) { return u && !/\/$/.test(u); };
+    var url = function (u) { return /^http|^\/images\//.test(u) ? u : CDN + u; };
+    var icon = function (n, s) { return '<svg class="icon" width="' + s + '" height="' + s + '" aria-hidden="true"><use href="' + SPRITE + '#i-' + n + '"/></svg>'; };
+    var cat = CATS[p.cat] || { n: p.cat, s: {} }, sub = (cat.s || {})[p.sub] || {};
+    var subTitle = sub.t || p.subName || '';
+    var img = ok(p.img) ? p.img : ok(sub.i) ? sub.i : ok(cat.i) ? cat.i : '';
+    var vals = [], unit = '';
+    [p.di, p.do, p.w, p.l].forEach(function (v) { if (!v) return; var x = /^\s*([0-9.,\/\- ]*[0-9])\s*([a-zA-Z]*)\s*$/.exec(v); if (x) { vals.push(x[1]); unit = unit || x[2]; } else vals.push(v); });
+    var dims = vals.length ? vals.join(' × ') + ' ' + (unit || 'mm').toLowerCase() : '';
+    var catURL = '/products/category/' + p.cat, brandURL = BRANDS[(p.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '')];
+    document.title = p.brand + ' - ' + p.part + (subTitle ? ' | ' + subTitle : '') + (dims ? ' | ' + dims : '') + ' | VW Impex';
+    var cur = 'INR', rate = 0; try { cur = localStorage.getItem('vw-cur') || 'INR'; } catch (x) {}
+    var rb = document.querySelector('[data-usd-rate]'); if (rb) rate = parseFloat(rb.dataset.usdRate) || 0;
+    var money = function (n) { n = parseFloat(n); return cur === 'USD' && rate ? '$' + (n * rate).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '₹' + n.toLocaleString('en-IN', { maximumFractionDigits: 2 }); };
+    var row = function (k, v) { return v ? '<tr><th>' + k + '</th><td>' + v + '</td></tr>' : ''; };
+    var txt = function (s) { return e(s).replace(/\n+/g, '<br>'); };
+    var f = ['slug', 'brand', 'part', 'cat', 'sub', 'subName', 'price', 'di', 'do', 'w', 'l', 'kg', 'bore', 'cage', 'seal', 'lub', 'moq', 'hsn', 'pdf', 'img', 'desc', 'tech'];
+    var q = ['title=' + encodeURIComponent(document.title.replace(/ \| VW Impex$/, ''))];
+    f.forEach(function (k) { var v = k === 'slug' ? slug : p[k]; if (v) q.push(k + '=' + encodeURIComponent(v)); });
+    var html =
+      '<section class="page-hero page-hero-product"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb">' +
+      '<a href="/">Home</a> <span>/</span><a href="' + catURL + '">' + e(cat.n) + '</a> <span>/</span>' +
+      (p.sub ? '<a href="' + catURL + '/' + p.sub + '">' + e(subTitle) + '</a> <span>/</span>' : '') +
+      '<span aria-current="page">' + e(p.part) + '</span></nav></div></section>' +
+      '<section class="section section-tight"><div class="container product-layout">' +
+      '<div class="product-gallery card">' + (img ? '<img src="' + e(url(img)) + '" alt="' + e(p.brand + ' ' + p.part) + '" width="420" height="420" onerror="this.remove()">' : '<span class="product-placeholder">' + icon('ball', 120) + '</span>') +
+      '<span class="brand-chip">' + e(p.brand) + '</span></div>' +
+      '<div class="product-info"><p class="eyebrow">' + e(subTitle) + '</p>' +
+      '<h1 class="product-title">' + e(p.brand) + ' <span>' + e(p.part) + '</span></h1>' +
+      (dims ? '<p class="product-dims">' + e(dims) + '</p>' : '') +
+      (p.price ? '<p class="price price-lg"><span data-inr="' + e(p.price) + '">' + money(p.price) + '</span> <small>excl. GST</small></p>' : '') +
+      '<ul class="quote-points"><li>' + icon('check', 18) + ' Availability: <strong>Sourced to order</strong></li>' +
+      '<li>' + icon('truck', 18) + ' Standard dispatch: <strong>7–9 business days</strong></li>' +
+      (p.moq ? '<li>' + icon('box', 18) + ' Minimum order: <strong>' + e(p.moq) + '</strong></li>' : '') + '</ul>' +
+      '<div class="hero-actions"><a class="btn btn-primary btn-lg" href="/getQuote/' + e(slug) + '">Get a Quote</a>' +
+      '<a class="btn btn-ghost btn-lg" href="mailto:' + EMAIL + '?subject=' + encodeURIComponent('Enquiry: ' + p.brand + ' ' + p.part) + '">Email us</a></div>' +
+      '<p class="muted small">Get a quote for exact pricing and lead time.</p>' +
+      '<a class="edit-link" hidden data-editor-only href="/admin/#/collections/products/new?' + q.join('&') + '">✎ Edit this product in CMS</a>' +
+      '<table class="spec-table"><caption>Specifications</caption><tbody>' +
+      row('Brand', brandURL ? '<a href="' + brandURL + '">' + e(p.brand) + '</a>' : e(p.brand)) + row('Part number', e(p.part)) +
+      row('Category', '<a href="' + catURL + '">' + e(cat.n) + '</a>') + row('Inner diameter (d)', e(p.di)) + row('Outer diameter (D)', e(p.do)) +
+      row('Width (B)', e(p.w)) + row('Length', e(p.l)) + row('Weight', p.kg ? e(p.kg) + ' kg' : '') + row('Bore', e(p.bore)) +
+      row('Cage', e(p.cage)) + row('Seal', e(p.seal)) + row('Lubrication', e(p.lub)) + row('HSN code', e(p.hsn)) + '</tbody></table>' +
+      (p.pdf ? '<a class="link-arrow" href="' + e(p.pdf) + '" rel="noopener">Download datasheet (PDF) ' + icon('arrow', 16) + '</a>' : '') +
+      '</div></div>' +
+      (p.desc || p.tech ? '<div class="container product-details"><h2 class="block-title">Details</h2><div class="prose">' +
+        (p.desc ? '<p>' + txt(p.desc) + '</p>' : '') + (p.tech ? '<h3>Technical details</h3><p>' + txt(p.tech) + '</p>' : '') + '</div></div>' : '') +
+      '</section>';
+    var root = document.getElementById('pv-root');
+    root.innerHTML = html; root.hidden = false;
+        try { if (localStorage.getItem('vw-editor')) root.querySelectorAll('[data-editor-only]').forEach(function (a) { a.hidden = false; }); } catch (x) {}
+  }).catch(show404);
+})();
+</script>
 {{ end }}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>http://localhost:41215/sitemap-pages.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-1.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-2.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-3.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-4.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-5.xml</loc></sitemap>
-  <sitemap><loc>http://localhost:41215/sitemaps/products-6.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemap-pages.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-1.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-2.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-3.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-4.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-5.xml</loc></sitemap>
+  <sitemap><loc>http://localhost:1313/sitemaps/products-6.xml</loc></sitemap>
 </sitemapindex>
