@@ -6,3 +6,7 @@ node_modules/
 exports/
 products_export.csv
 static/pdata/
+public/
+resources/
+hugo_stats.json
+static/pdata/
